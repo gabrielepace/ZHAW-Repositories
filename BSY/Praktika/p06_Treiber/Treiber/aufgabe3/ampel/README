@@ -1,0 +1,28 @@
+If you have Java installed use ampel.jar
+
+    The program ampel.jar simulates a traffic light connected
+    to the lp1 parallel port of a PC.
+
+    The three colors are controled by the three lower bits of
+    the data port (on when set to '1'):
+
+	    b0 -> red 
+	    b1 -> yellow
+	    b2 -> green
+
+	    b7 is set to '1' to make it work (emulates real
+	    hardware).
+
+    There is a key, which controls bit b6 of the status port:
+    when key is pressed, b6 = '1' otherwise b6 = '0'.
+
+
+If you have not Java installed
+
+    a) use ampelSim.c ... just simple pseudo graphics
+
+       the key is activated by pressing "ENTER"
+
+    b) install Java !!!! but !!!!
+       make sure you have enough disk space: the shell command
+       "df -h /" should show alt least 500MB

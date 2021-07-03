@@ -1,0 +1,12 @@
+{
+  "name": "WeatherProject",
+  "displayName": "WeatherProject",
+  "expo": {
+    "name": "WeatherProject",
+    "slug": "WeatherProject",
+    "version": "2.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

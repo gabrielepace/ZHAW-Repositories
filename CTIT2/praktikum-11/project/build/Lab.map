@@ -1,0 +1,719 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    action_handler.o(i.TIM3_IRQHandler) refers to hal_timer.o(i.hal_timer_irq_status) for hal_timer_irq_status
+    action_handler.o(i.TIM3_IRQHandler) refers to hal_timer.o(i.hal_timer_irq_clear) for hal_timer_irq_clear
+    action_handler.o(i.TIM3_IRQHandler) refers to aeabi_sdiv.o(.text) for __aeabi_uidivmod
+    action_handler.o(i.TIM3_IRQHandler) refers to action_handler.o(i.ah_show_exception) for ah_show_exception
+    action_handler.o(i.TIM3_IRQHandler) refers to action_handler.o(.data) for timer_count
+    action_handler.o(i.TIM3_IRQHandler) refers to event_handler.o(.data) for flag_F1_Reached
+    action_handler.o(i.action_handler_init) refers to hal_timer.o(i.hal_timer_init_base) for hal_timer_init_base
+    action_handler.o(i.action_handler_init) refers to hal_timer.o(i.hal_timer_irq_set) for hal_timer_irq_set
+    action_handler.o(i.action_handler_init) refers to hal_timer.o(i.hal_timer_start) for hal_timer_start
+    action_handler.o(i.ah_door) refers to action_handler.o(i.ah_show_exception) for ah_show_exception
+    action_handler.o(i.ah_door) refers to action_handler.o(.data) for door_state
+    action_handler.o(i.ah_motor) refers to action_handler.o(i.ah_show_exception) for ah_show_exception
+    action_handler.o(i.ah_motor) refers to action_handler.o(.data) for door_state
+    action_handler.o(i.ah_show_exception) refers to hal_ct_lcd.o(i.hal_ct_lcd_write) for hal_ct_lcd_write
+    action_handler.o(i.ah_show_state) refers to hal_ct_lcd.o(i.hal_ct_lcd_write) for hal_ct_lcd_write
+    action_handler.o(i.ah_signal) refers to action_handler.o(.data) for signal_state
+    event_handler.o(i.eh_7seg_display) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    event_handler.o(i.eh_7seg_display) refers to _printf_u.o(.ARM.Collect$$_printf_percent$$0000000A) for _printf_u
+    event_handler.o(i.eh_7seg_display) refers to _printf_dec.o(.text) for _printf_int_dec
+    event_handler.o(i.eh_7seg_display) refers to __2sprintf.o(.text) for __2sprintf
+    event_handler.o(i.eh_7seg_display) refers to event_handler.o(.data) for digit_pattern
+    event_handler.o(i.eh_get_event) refers to timer.o(i.timer_read) for timer_read
+    event_handler.o(i.eh_get_event) refers to event_handler.o(i.eh_7seg_display) for eh_7seg_display
+    event_handler.o(i.eh_get_event) refers to event_handler.o(.data) for timer_old
+    event_handler.o(i.eh_weight_control) refers to event_handler.o(i.eh_7seg_display) for eh_7seg_display
+    event_handler.o(i.eh_weight_control) refers to event_handler.o(.data) for wctl_state
+    main.o(i.main) refers to state_machine.o(i.fsm_init) for fsm_init
+    main.o(i.main) refers to timer.o(i.timer_init) for timer_init
+    main.o(i.main) refers to event_handler.o(i.eh_get_event) for eh_get_event
+    main.o(i.main) refers to state_machine.o(i.fsm_handle_event) for fsm_handle_event
+    state_machine.o(i.fsm_handle_event) refers to state_machine.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    state_machine.o(i.fsm_handle_event) refers to action_handler.o(i.ah_show_state) for ah_show_state
+    state_machine.o(i.fsm_handle_event) refers to action_handler.o(i.ah_door) for ah_door
+    state_machine.o(i.fsm_handle_event) refers to action_handler.o(i.ah_motor) for ah_motor
+    state_machine.o(i.fsm_handle_event) refers to action_handler.o(i.ah_signal) for ah_signal
+    state_machine.o(i.fsm_handle_event) refers to timer.o(i.timer_start) for timer_start
+    state_machine.o(i.fsm_handle_event) refers to timer.o(i.timer_stop) for timer_stop
+    state_machine.o(i.fsm_handle_event) refers to state_machine.o(.data) for state
+    state_machine.o(i.fsm_init) refers to action_handler.o(i.action_handler_init) for action_handler_init
+    state_machine.o(i.fsm_init) refers to action_handler.o(i.ah_show_exception) for ah_show_exception
+    state_machine.o(i.fsm_init) refers to action_handler.o(i.ah_door) for ah_door
+    state_machine.o(i.fsm_init) refers to action_handler.o(i.ah_show_state) for ah_show_state
+    state_machine.o(i.fsm_init) refers to state_machine.o(.data) for state
+    timer.o(i.TIM4_IRQHandler) refers to hal_timer.o(i.hal_timer_irq_status) for hal_timer_irq_status
+    timer.o(i.TIM4_IRQHandler) refers to hal_timer.o(i.hal_timer_irq_clear) for hal_timer_irq_clear
+    timer.o(i.TIM4_IRQHandler) refers to timer.o(.data) for timer_count
+    timer.o(i.timer_init) refers to hal_timer.o(i.hal_timer_init_base) for hal_timer_init_base
+    timer.o(i.timer_init) refers to hal_timer.o(i.hal_timer_irq_set) for hal_timer_irq_set
+    timer.o(i.timer_init) refers to hal_timer.o(i.hal_timer_start) for hal_timer_start
+    timer.o(i.timer_read) refers to timer.o(.data) for timer_count
+    timer.o(i.timer_start) refers to timer.o(.data) for timer_count
+    timer.o(i.timer_stop) refers to timer.o(.data) for timer_count
+    datainit_ctboard.o(.text) refers (Weak) to startup_ctboard.o(STACK) for Stack_Mem
+    datainit_ctboard.o(.text) refers to main.o(i.main) for main
+    startup_ctboard.o(RESET) refers to startup_ctboard.o(STACK) for __initial_sp
+    startup_ctboard.o(RESET) refers to startup_ctboard.o(.text) for Reset_Handler
+    startup_ctboard.o(RESET) refers to action_handler.o(i.TIM3_IRQHandler) for TIM3_IRQHandler
+    startup_ctboard.o(RESET) refers to timer.o(i.TIM4_IRQHandler) for TIM4_IRQHandler
+    startup_ctboard.o(.text) refers to system_ctboard.o(i.__system) for __system
+    startup_ctboard.o(.text) refers to datainit_ctboard.o(.text) for __main
+    system_ctboard.o(i.__system) refers to system_ctboard.o(i.system_enter_run) for system_enter_run
+    system_ctboard.o(i.init_FMC_SRAM) refers to hal_gpio.o(i.hal_gpio_init_alternate) for hal_gpio_init_alternate
+    system_ctboard.o(i.init_FMC_SRAM) refers to rt_memcpy.o(.emb_text) for __aeabi_memcpy4
+    system_ctboard.o(i.init_FMC_SRAM) refers to hal_fmc.o(i.hal_fmc_init_sram) for hal_fmc_init_sram
+    system_ctboard.o(i.init_SystemClock) refers to hal_rcc.o(i.hal_rcc_reset) for hal_rcc_reset
+    system_ctboard.o(i.init_SystemClock) refers to hal_rcc.o(i.hal_rcc_set_osc) for hal_rcc_set_osc
+    system_ctboard.o(i.init_SystemClock) refers to hal_rcc.o(i.hal_rcc_setup_pll) for hal_rcc_setup_pll
+    system_ctboard.o(i.init_SystemClock) refers to hal_pwr.o(i.hal_pwr_set_overdrive) for hal_pwr_set_overdrive
+    system_ctboard.o(i.init_SystemClock) refers to hal_rcc.o(i.hal_rcc_setup_clock) for hal_rcc_setup_clock
+    system_ctboard.o(i.system_enter_run) refers to system_ctboard.o(i.init_SystemClock) for init_SystemClock
+    system_ctboard.o(i.system_enter_run) refers to system_ctboard.o(i.init_FPU) for init_FPU
+    system_ctboard.o(i.system_enter_run) refers to system_ctboard.o(i.init_FMC_SRAM) for init_FMC_SRAM
+    system_ctboard.o(i.system_enter_run) refers to system_ctboard.o(i.init_LCD) for init_LCD
+    hal_ct_lcd.o(i.hal_ct_lcd_clear) refers to hal_ct_lcd.o(i.hal_ct_lcd_write) for hal_ct_lcd_write
+    hal_gpio.o(i.create_pattern_mask) refers to aeabi_sdiv.o(.text) for __aeabi_idivmod
+    hal_gpio.o(i.hal_gpio_bit_reset) refers to hal_gpio.o(i.intercept_overwrite_register) for intercept_overwrite_register
+    hal_gpio.o(i.hal_gpio_bit_set) refers to hal_gpio.o(i.intercept_overwrite_register) for intercept_overwrite_register
+    hal_gpio.o(i.hal_gpio_bit_toggle) refers to hal_gpio.o(i.intercept_overwrite_register) for intercept_overwrite_register
+    hal_gpio.o(i.hal_gpio_bit_toggle) refers to hal_gpio.o(i.hal_gpio_output_read) for hal_gpio_output_read
+    hal_gpio.o(i.hal_gpio_init_alternate) refers to hal_gpio.o(i.hal_gpio_init_output) for hal_gpio_init_output
+    hal_gpio.o(i.hal_gpio_init_alternate) refers to hal_gpio.o(i.create_pattern_mask) for create_pattern_mask
+    hal_gpio.o(i.hal_gpio_init_analog) refers to hal_gpio.o(i.hal_gpio_init_input) for hal_gpio_init_input
+    hal_gpio.o(i.hal_gpio_init_analog) refers to hal_gpio.o(i.create_pattern_mask) for create_pattern_mask
+    hal_gpio.o(i.hal_gpio_init_input) refers to hal_gpio.o(i.intercept_overwrite_register) for intercept_overwrite_register
+    hal_gpio.o(i.hal_gpio_init_input) refers to hal_gpio.o(i.create_pattern_mask) for create_pattern_mask
+    hal_gpio.o(i.hal_gpio_init_output) refers to hal_gpio.o(i.intercept_overwrite_register) for intercept_overwrite_register
+    hal_gpio.o(i.hal_gpio_init_output) refers to hal_gpio.o(i.create_pattern_mask) for create_pattern_mask
+    hal_gpio.o(i.hal_gpio_irq_set) refers to hal_gpio.o(i.get_syscfg_mask) for get_syscfg_mask
+    hal_gpio.o(i.hal_gpio_output_write) refers to hal_gpio.o(i.intercept_overwrite_register) for intercept_overwrite_register
+    hal_rcc.o(i.hal_rcc_set_peripheral) refers to state_machine.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    hal_timer.o(i.hal_timer_init_input) refers to hal_timer.o(i.set_channel_ccreg) for set_channel_ccreg
+    hal_timer.o(i.hal_timer_init_input) refers to hal_timer.o(i.set_channel_polarity) for set_channel_polarity
+    hal_timer.o(i.hal_timer_init_input) refers to hal_timer.o(i.hal_timer_channel_set) for hal_timer_channel_set
+    hal_timer.o(i.hal_timer_init_output) refers to hal_timer.o(i.set_channel_ccreg) for set_channel_ccreg
+    hal_timer.o(i.hal_timer_init_output) refers to hal_timer.o(i.set_channel_polarity) for set_channel_polarity
+    hal_timer.o(i.hal_timer_init_output) refers to hal_timer.o(i.hal_timer_channel_set) for hal_timer_channel_set
+    hal_timer.o(i.hal_timer_init_output) refers to hal_timer.o(i.hal_timer_compare_write) for hal_timer_compare_write
+    hal_timer.o(i.hal_timer_init_output) refers to hal_timer.o(i.adv_main_output_set) for adv_main_output_set
+    hal_timer.o(i.hal_timer_irq_set) refers to hal_timer.o(i.get_irq_param) for get_irq_param
+    hal_timer.o(i.hal_timer_reset) refers to hal_timer.o(i.get_irq_param) for get_irq_param
+    __2sprintf.o(.text) refers to _printf_char_common.o(.text) for _printf_char_common
+    __2sprintf.o(.text) refers to _sputc.o(.text) for _sputc
+    noretval__2sprintf.o(.text) refers to _printf_char_common.o(.text) for _printf_char_common
+    noretval__2sprintf.o(.text) refers to _sputc.o(.text) for _sputc
+    __printf.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    _printf_dec.o(.text) refers to rtudiv10.o(.text) for __rt_udiv10
+    _printf_dec.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    __printf_flags.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags.o(.text) refers to __printf_flags.o(.constdata) for .constdata
+    __printf_ss.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_ss.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_ss.o(.text) refers to __printf_flags_ss.o(.constdata) for .constdata
+    __printf_wp.o(.text) refers to __printf_wp.o(i._is_digit) for _is_digit
+    __printf_wp.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_wp.o(.text) refers to __printf_wp.o(i._is_digit) for _is_digit
+    __printf_flags_wp.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_wp.o(.text) refers to __printf_flags_wp.o(.constdata) for .constdata
+    __printf_ss_wp.o(.text) refers to __printf_wp.o(i._is_digit) for _is_digit
+    __printf_ss_wp.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_ss_wp.o(.text) refers to __printf_wp.o(i._is_digit) for _is_digit
+    __printf_flags_ss_wp.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_ss_wp.o(.text) refers to __printf_flags_ss_wp.o(.constdata) for .constdata
+    _printf_u.o(.ARM.Collect$$_printf_percent$$0000000A) refers (Weak) to _printf_dec.o(.text) for _printf_int_dec
+    _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) refers (Special) to _printf_percent_end.o(.ARM.Collect$$_printf_percent$$00000017) for _printf_percent_end
+    rt_memcpy.o(.text) refers to rt_memcpy.o(.emb_text) for __aeabi_memcpy4
+    aeabi_idiv0_sigfpe.o(.text) refers to rt_div0.o(.text) for __rt_div0
+    _printf_char_common.o(.text) refers to __printf.o(.text) for __printf
+    rt_div0.o(.text) refers to defsig_fpe_outer.o(.text) for __rt_SIGFPE
+    defsig_fpe_outer.o(.text) refers to defsig_fpe_inner.o(.text) for __rt_SIGFPE_inner
+    defsig_fpe_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_fpe_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig.o(CL$$defsig) refers to defsig_fpe_inner.o(.text) for __rt_SIGFPE_inner
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing action_handler.o(.constdata), (20 bytes).
+    Removing event_handler.o(i.eh_init), (108 bytes).
+    Removing event_handler.o(i.eh_weight_control), (48 bytes).
+    Removing startup_ctboard.o(HEAP), (2048 bytes).
+    Removing system_ctboard.o(i.system_enter_sleep), (2 bytes).
+    Removing system_ctboard.o(i.system_enter_standby), (2 bytes).
+    Removing system_ctboard.o(i.system_enter_stop), (2 bytes).
+    Removing hal_ct_lcd.o(i.hal_ct_lcd_clear), (44 bytes).
+    Removing hal_ct_lcd.o(i.hal_ct_lcd_color), (40 bytes).
+    Removing hal_fmc.o(i.hal_fmc_reset), (92 bytes).
+    Removing hal_gpio.o(i.get_syscfg_mask), (148 bytes).
+    Removing hal_gpio.o(i.hal_gpio_bit_reset), (26 bytes).
+    Removing hal_gpio.o(i.hal_gpio_bit_set), (24 bytes).
+    Removing hal_gpio.o(i.hal_gpio_bit_toggle), (42 bytes).
+    Removing hal_gpio.o(i.hal_gpio_init_analog), (50 bytes).
+    Removing hal_gpio.o(i.hal_gpio_init_input), (90 bytes).
+    Removing hal_gpio.o(i.hal_gpio_input_read), (8 bytes).
+    Removing hal_gpio.o(i.hal_gpio_irq_clear), (16 bytes).
+    Removing hal_gpio.o(i.hal_gpio_irq_set), (540 bytes).
+    Removing hal_gpio.o(i.hal_gpio_irq_status), (36 bytes).
+    Removing hal_gpio.o(i.hal_gpio_output_read), (8 bytes).
+    Removing hal_gpio.o(i.hal_gpio_output_write), (20 bytes).
+    Removing hal_gpio.o(i.hal_gpio_reset), (76 bytes).
+    Removing hal_pwr.o(i.hal_pwr_reset), (20 bytes).
+    Removing hal_pwr.o(i.hal_pwr_set_backup_access), (40 bytes).
+    Removing hal_pwr.o(i.hal_pwr_set_backup_domain), (100 bytes).
+    Removing hal_pwr.o(i.hal_pwr_set_flash_powerdown), (40 bytes).
+    Removing hal_pwr.o(i.hal_pwr_set_underdrive), (6 bytes).
+    Removing hal_pwr.o(i.hal_pwr_set_wakeup_pin), (40 bytes).
+    Removing hal_rcc.o(i.hal_rcc_set_peripheral), (236 bytes).
+    Removing hal_timer.o(i.adv_main_output_set), (26 bytes).
+    Removing hal_timer.o(i.hal_timer_channel_set), (50 bytes).
+    Removing hal_timer.o(i.hal_timer_compare_read), (88 bytes).
+    Removing hal_timer.o(i.hal_timer_compare_write), (88 bytes).
+    Removing hal_timer.o(i.hal_timer_counter_read), (28 bytes).
+    Removing hal_timer.o(i.hal_timer_dma_set), (20 bytes).
+    Removing hal_timer.o(i.hal_timer_init_clock), (86 bytes).
+    Removing hal_timer.o(i.hal_timer_init_input), (64 bytes).
+    Removing hal_timer.o(i.hal_timer_init_output), (88 bytes).
+    Removing hal_timer.o(i.hal_timer_prescaler_write), (36 bytes).
+    Removing hal_timer.o(i.hal_timer_reload_write), (28 bytes).
+    Removing hal_timer.o(i.hal_timer_reset), (292 bytes).
+    Removing hal_timer.o(i.hal_timer_stop), (10 bytes).
+    Removing hal_timer.o(i.set_channel_ccreg), (102 bytes).
+    Removing hal_timer.o(i.set_channel_polarity), (48 bytes).
+
+45 unused section(s) (total 5026 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_idiv0_sigfpe.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_idiv0.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_div0.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/division.c                       0x00000000   Number         0  rtudiv10.o ABSOLUTE
+    ../clib/division.s                       0x00000000   Number         0  aeabi_sdiv_div0.o ABSOLUTE
+    ../clib/division.s                       0x00000000   Number         0  aeabi_sdiv.o ABSOLUTE
+    ../clib/memcpset.c                       0x00000000   Number         0  rt_memcpy.o ABSOLUTE
+    ../clib/memcpset.c                       0x00000000   Number         0  rt_memcpy.o ABSOLUTE
+    ../clib/misc.s                           0x00000000   Number         0  printf_stubs.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_char_common.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_dec.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __2sprintf.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_nopercent.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_ss.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_intcommon.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _sputc.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_ss_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  noretval__2sprintf.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_u.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent_end.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_outer.o ABSOLUTE
+    ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
+    RTE\Device\CT_Board_HS14_M0\datainit_ctboard.s 0x00000000   Number         0  datainit_ctboard.o ABSOLUTE
+    RTE\Device\CT_Board_HS14_M0\startup_ctboard.s 0x00000000   Number         0  startup_ctboard.o ABSOLUTE
+    RTE\Device\CT_Board_HS14_M0\system_ctboard.c 0x00000000   Number         0  system_ctboard.o ABSOLUTE
+    RTE\HAL\CT_Board_HS14_M0\hal_ct_lcd.c    0x00000000   Number         0  hal_ct_lcd.o ABSOLUTE
+    RTE\HAL\CT_Board_HS14_M0\hal_fmc.c       0x00000000   Number         0  hal_fmc.o ABSOLUTE
+    RTE\HAL\CT_Board_HS14_M0\hal_gpio.c      0x00000000   Number         0  hal_gpio.o ABSOLUTE
+    RTE\HAL\CT_Board_HS14_M0\hal_pwr.c       0x00000000   Number         0  hal_pwr.o ABSOLUTE
+    RTE\HAL\CT_Board_HS14_M0\hal_rcc.c       0x00000000   Number         0  hal_rcc.o ABSOLUTE
+    RTE\HAL\CT_Board_HS14_M0\hal_timer.c     0x00000000   Number         0  hal_timer.o ABSOLUTE
+    app\action_handler.c                     0x00000000   Number         0  action_handler.o ABSOLUTE
+    app\event_handler.c                      0x00000000   Number         0  event_handler.o ABSOLUTE
+    app\main.c                               0x00000000   Number         0  main.o ABSOLUTE
+    app\state_machine.c                      0x00000000   Number         0  state_machine.o ABSOLUTE
+    app\timer.c                              0x00000000   Number         0  timer.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    RESET                                    0x08000000   Section      428  startup_ctboard.o(RESET)
+    .ARM.Collect$$_printf_percent$$00000000  0x080001ac   Section        2  _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000)
+    .ARM.Collect$$_printf_percent$$0000000A  0x080001ae   Section       10  _printf_u.o(.ARM.Collect$$_printf_percent$$0000000A)
+    .ARM.Collect$$_printf_percent$$00000017  0x080001b8   Section        4  _printf_percent_end.o(.ARM.Collect$$_printf_percent$$00000017)
+    .emb_text                                0x080001bc   Section       56  rt_memcpy.o(.emb_text)
+    .text                                    0x080001f4   Section      124  datainit_ctboard.o(.text)
+    .text                                    0x08000270   Section       36  startup_ctboard.o(.text)
+    .text                                    0x08000294   Section        0  __2sprintf.o(.text)
+    .text                                    0x080002c0   Section        0  __printf.o(.text)
+    .text                                    0x0800032c   Section        0  _printf_dec.o(.text)
+    .text                                    0x08000398   Section      346  aeabi_sdiv.o(.text)
+    .text                                    0x080004f2   Section        0  _printf_intcommon.o(.text)
+    .text                                    0x080005a4   Section        0  _printf_char_common.o(.text)
+    _printf_input_char                       0x080005a5   Thumb Code    10  _printf_char_common.o(.text)
+    .text                                    0x080005d4   Section        0  _sputc.o(.text)
+    .text                                    0x080005de   Section        0  rtudiv10.o(.text)
+    i.TIM3_IRQHandler                        0x08000608   Section        0  action_handler.o(i.TIM3_IRQHandler)
+    i.TIM4_IRQHandler                        0x080007d4   Section        0  timer.o(i.TIM4_IRQHandler)
+    i.__ARM_common_switch8                   0x08000808   Section        0  state_machine.o(i.__ARM_common_switch8)
+    i.__system                               0x08000824   Section        0  system_ctboard.o(i.__system)
+    i.action_handler_init                    0x0800082c   Section        0  action_handler.o(i.action_handler_init)
+    i.ah_door                                0x08000870   Section        0  action_handler.o(i.ah_door)
+    i.ah_motor                               0x08000924   Section        0  action_handler.o(i.ah_motor)
+    i.ah_show_exception                      0x08000960   Section        0  action_handler.o(i.ah_show_exception)
+    i.ah_show_state                          0x080009e8   Section        0  action_handler.o(i.ah_show_state)
+    i.ah_signal                              0x08000a18   Section        0  action_handler.o(i.ah_signal)
+    i.create_pattern_mask                    0x08000a24   Section        0  hal_gpio.o(i.create_pattern_mask)
+    create_pattern_mask                      0x08000a25   Thumb Code    92  hal_gpio.o(i.create_pattern_mask)
+    i.eh_7seg_display                        0x08000a80   Section        0  event_handler.o(i.eh_7seg_display)
+    i.eh_get_event                           0x08000ad8   Section        0  event_handler.o(i.eh_get_event)
+    i.fsm_handle_event                       0x08000c10   Section        0  state_machine.o(i.fsm_handle_event)
+    i.fsm_init                               0x08000ddc   Section        0  state_machine.o(i.fsm_init)
+    i.get_irq_param                          0x08000e18   Section        0  hal_timer.o(i.get_irq_param)
+    get_irq_param                            0x08000e19   Thumb Code   360  hal_timer.o(i.get_irq_param)
+    i.hal_ct_lcd_write                       0x08000fb4   Section        0  hal_ct_lcd.o(i.hal_ct_lcd_write)
+    i.hal_fmc_init_sram                      0x08000fe0   Section        0  hal_fmc.o(i.hal_fmc_init_sram)
+    i.hal_gpio_init_alternate                0x0800117c   Section        0  hal_gpio.o(i.hal_gpio_init_alternate)
+    i.hal_gpio_init_output                   0x080011fe   Section        0  hal_gpio.o(i.hal_gpio_init_output)
+    i.hal_pwr_set_overdrive                  0x08001296   Section        0  hal_pwr.o(i.hal_pwr_set_overdrive)
+    i.hal_rcc_reset                          0x0800129c   Section        0  hal_rcc.o(i.hal_rcc_reset)
+    i.hal_rcc_set_osc                        0x08001344   Section        0  hal_rcc.o(i.hal_rcc_set_osc)
+    i.hal_rcc_setup_clock                    0x080013dc   Section        0  hal_rcc.o(i.hal_rcc_setup_clock)
+    i.hal_rcc_setup_pll                      0x08001468   Section        0  hal_rcc.o(i.hal_rcc_setup_pll)
+    i.hal_timer_init_base                    0x080015b0   Section        0  hal_timer.o(i.hal_timer_init_base)
+    i.hal_timer_irq_clear                    0x0800161c   Section        0  hal_timer.o(i.hal_timer_irq_clear)
+    i.hal_timer_irq_set                      0x08001624   Section        0  hal_timer.o(i.hal_timer_irq_set)
+    i.hal_timer_irq_status                   0x080016a4   Section        0  hal_timer.o(i.hal_timer_irq_status)
+    i.hal_timer_start                        0x080016c0   Section        0  hal_timer.o(i.hal_timer_start)
+    i.init_FMC_SRAM                          0x080016cc   Section        0  system_ctboard.o(i.init_FMC_SRAM)
+    init_FMC_SRAM                            0x080016cd   Thumb Code   266  system_ctboard.o(i.init_FMC_SRAM)
+    i.init_FPU                               0x080017f4   Section        0  system_ctboard.o(i.init_FPU)
+    init_FPU                                 0x080017f5   Thumb Code     2  system_ctboard.o(i.init_FPU)
+    i.init_LCD                               0x080017f8   Section        0  system_ctboard.o(i.init_LCD)
+    init_LCD                                 0x080017f9   Thumb Code    12  system_ctboard.o(i.init_LCD)
+    i.init_SystemClock                       0x08001808   Section        0  system_ctboard.o(i.init_SystemClock)
+    init_SystemClock                         0x08001809   Thumb Code   168  system_ctboard.o(i.init_SystemClock)
+    i.intercept_overwrite_register           0x080018c0   Section        0  hal_gpio.o(i.intercept_overwrite_register)
+    intercept_overwrite_register             0x080018c1   Thumb Code    22  hal_gpio.o(i.intercept_overwrite_register)
+    i.main                                   0x080018e0   Section        0  main.o(i.main)
+    i.system_enter_run                       0x080018fc   Section        0  system_ctboard.o(i.system_enter_run)
+    i.timer_init                             0x08001910   Section        0  timer.o(i.timer_init)
+    i.timer_read                             0x08001958   Section        0  timer.o(i.timer_read)
+    i.timer_start                            0x08001964   Section        0  timer.o(i.timer_start)
+    i.timer_stop                             0x08001970   Section        0  timer.o(i.timer_stop)
+    .data                                    0x20000000   Section       24  action_handler.o(.data)
+    timer_count                              0x20000000   Data           4  action_handler.o(.data)
+    elevator_state                           0x20000004   Data           1  action_handler.o(.data)
+    door_state                               0x20000005   Data           1  action_handler.o(.data)
+    signal_state                             0x20000006   Data           1  action_handler.o(.data)
+    .data                                    0x20000018   Section       26  event_handler.o(.data)
+    current_weight_limit                     0x20000018   Data           2  event_handler.o(.data)
+    wctl_state                               0x2000001a   Data           1  event_handler.o(.data)
+    button_value_old                         0x2000001d   Data           1  event_handler.o(.data)
+    dip_value_old                            0x20000020   Data           4  event_handler.o(.data)
+    weight_value_old                         0x20000024   Data           2  event_handler.o(.data)
+    timer_old                                0x20000026   Data           2  event_handler.o(.data)
+    .data                                    0x20000032   Section        1  state_machine.o(.data)
+    state                                    0x20000032   Data           1  state_machine.o(.data)
+    .data                                    0x20000034   Section        2  timer.o(.data)
+    timer_count                              0x20000034   Data           2  timer.o(.data)
+    STACK                                    0x20000038   Section     8192  startup_ctboard.o(STACK)
+    __initial_sp                             0x20002038   Data           0  startup_ctboard.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    _printf_flags                            0x00000000   Number         0  printf_stubs.o ABSOLUTE
+    _printf_return_value                     0x00000000   Number         0  printf_stubs.o ABSOLUTE
+    _printf_sizespec                         0x00000000   Number         0  printf_stubs.o ABSOLUTE
+    _printf_widthprec                        0x00000000   Number         0  printf_stubs.o ABSOLUTE
+    Image$$ER_IROM1$$Limit                    - Undefined Weak Reference
+    Image$$RW_IRAM1$$Base                     - Undefined Weak Reference
+    Image$$RW_IRAM1$$ZI$$Base                 - Undefined Weak Reference
+    Image$$RW_IRAM1$$ZI$$Limit                - Undefined Weak Reference
+    __sigvec_lookup                           - Undefined Weak Reference
+    _printf_post_padding                      - Undefined Weak Reference
+    _printf_pre_padding                       - Undefined Weak Reference
+    _printf_truncate_signed                   - Undefined Weak Reference
+    _printf_truncate_unsigned                 - Undefined Weak Reference
+    __Vectors_Size                           0x000001ac   Number         0  startup_ctboard.o ABSOLUTE
+    Stack_Size                               0x00002000   Number         0  startup_ctboard.o ABSOLUTE
+    __Vectors                                0x08000000   Data           4  startup_ctboard.o(RESET)
+    __Vectors_End                            0x080001ac   Data           0  startup_ctboard.o(RESET)
+    _printf_percent                          0x080001ad   Thumb Code     0  _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000)
+    _printf_u                                0x080001af   Thumb Code     0  _printf_u.o(.ARM.Collect$$_printf_percent$$0000000A)
+    _printf_percent_end                      0x080001b9   Thumb Code     0  _printf_percent_end.o(.ARM.Collect$$_printf_percent$$00000017)
+    __aeabi_memcpy4                          0x080001bd   Thumb Code    56  rt_memcpy.o(.emb_text)
+    __aeabi_memcpy8                          0x080001bd   Thumb Code     0  rt_memcpy.o(.emb_text)
+    __main                                   0x080001f5   Thumb Code    74  datainit_ctboard.o(.text)
+    Reset_Handler                            0x08000271   Thumb Code     8  startup_ctboard.o(.text)
+    NMI_Handler                              0x08000279   Thumb Code     2  startup_ctboard.o(.text)
+    HardFault_Handler                        0x0800027b   Thumb Code     2  startup_ctboard.o(.text)
+    MemManage_Handler                        0x0800027d   Thumb Code     2  startup_ctboard.o(.text)
+    BusFault_Handler                         0x0800027f   Thumb Code     2  startup_ctboard.o(.text)
+    UsageFault_Handler                       0x08000281   Thumb Code     2  startup_ctboard.o(.text)
+    SVC_Handler                              0x08000283   Thumb Code     2  startup_ctboard.o(.text)
+    DebugMon_Handler                         0x08000285   Thumb Code     2  startup_ctboard.o(.text)
+    PendSV_Handler                           0x08000287   Thumb Code     2  startup_ctboard.o(.text)
+    SysTick_Handler                          0x08000289   Thumb Code     2  startup_ctboard.o(.text)
+    ADC_IRQHandler                           0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    CAN1_RX0_IRQHandler                      0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    CAN1_RX1_IRQHandler                      0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    CAN1_SCE_IRQHandler                      0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    CAN1_TX_IRQHandler                       0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    CAN2_RX0_IRQHandler                      0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    CAN2_RX1_IRQHandler                      0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    CAN2_SCE_IRQHandler                      0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    CAN2_TX_IRQHandler                       0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    CRYP_IRQHandler                          0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DCMI_IRQHandler                          0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA1_Stream0_IRQHandler                  0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA1_Stream1_IRQHandler                  0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA1_Stream2_IRQHandler                  0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA1_Stream3_IRQHandler                  0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA1_Stream4_IRQHandler                  0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA1_Stream5_IRQHandler                  0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA1_Stream6_IRQHandler                  0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA1_Stream7_IRQHandler                  0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA2D_IRQHandler                         0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA2_Stream0_IRQHandler                  0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA2_Stream1_IRQHandler                  0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA2_Stream2_IRQHandler                  0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA2_Stream3_IRQHandler                  0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA2_Stream4_IRQHandler                  0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA2_Stream5_IRQHandler                  0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA2_Stream6_IRQHandler                  0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    DMA2_Stream7_IRQHandler                  0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    ETH_IRQHandler                           0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    ETH_WKUP_IRQHandler                      0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    EXTI0_IRQHandler                         0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    EXTI15_10_IRQHandler                     0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    EXTI1_IRQHandler                         0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    EXTI2_IRQHandler                         0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    EXTI3_IRQHandler                         0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    EXTI4_IRQHandler                         0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    EXTI9_5_IRQHandler                       0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    FLASH_IRQHandler                         0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    FMC_IRQHandler                           0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    FPU_IRQHandler                           0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    HASH_RNG_IRQHandler                      0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    I2C1_ER_IRQHandler                       0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    I2C1_EV_IRQHandler                       0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    I2C2_ER_IRQHandler                       0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    I2C2_EV_IRQHandler                       0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    I2C3_ER_IRQHandler                       0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    I2C3_EV_IRQHandler                       0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    LTDC_ER_IRQHandler                       0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    LTDC_IRQHandler                          0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    OTG_FS_IRQHandler                        0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    OTG_FS_WKUP_IRQHandler                   0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    OTG_HS_EP1_IN_IRQHandler                 0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    OTG_HS_EP1_OUT_IRQHandler                0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    OTG_HS_IRQHandler                        0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    OTG_HS_WKUP_IRQHandler                   0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    PVD_IRQHandler                           0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    RCC_IRQHandler                           0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    RTC_Alarm_IRQHandler                     0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    RTC_WKUP_IRQHandler                      0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    SAI1_IRQHandler                          0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    SDIO_IRQHandler                          0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    SPI1_IRQHandler                          0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    SPI2_IRQHandler                          0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    SPI3_IRQHandler                          0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    SPI4_IRQHandler                          0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    SPI5_IRQHandler                          0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    SPI6_IRQHandler                          0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    TAMP_STAMP_IRQHandler                    0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    TIM1_BRK_TIM9_IRQHandler                 0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    TIM1_CC_IRQHandler                       0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    TIM1_TRG_COM_TIM11_IRQHandler            0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    TIM1_UP_TIM10_IRQHandler                 0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    TIM2_IRQHandler                          0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    TIM5_IRQHandler                          0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    TIM6_DAC_IRQHandler                      0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    TIM7_IRQHandler                          0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    TIM8_BRK_TIM12_IRQHandler                0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    TIM8_CC_IRQHandler                       0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    TIM8_TRG_COM_TIM14_IRQHandler            0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    TIM8_UP_TIM13_IRQHandler                 0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    UART4_IRQHandler                         0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    UART5_IRQHandler                         0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    UART7_IRQHandler                         0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    UART8_IRQHandler                         0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    USART1_IRQHandler                        0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    USART2_IRQHandler                        0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    USART3_IRQHandler                        0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    USART6_IRQHandler                        0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    WWDG_IRQHandler                          0x0800028b   Thumb Code     0  startup_ctboard.o(.text)
+    __2sprintf                               0x08000295   Thumb Code    40  __2sprintf.o(.text)
+    __printf                                 0x080002c1   Thumb Code   108  __printf.o(.text)
+    _printf_int_dec                          0x0800032d   Thumb Code    90  _printf_dec.o(.text)
+    __aeabi_uidiv                            0x08000399   Thumb Code     0  aeabi_sdiv.o(.text)
+    __aeabi_uidivmod                         0x08000399   Thumb Code    20  aeabi_sdiv.o(.text)
+    __aeabi_idiv                             0x080003ad   Thumb Code     0  aeabi_sdiv.o(.text)
+    __aeabi_idivmod                          0x080003ad   Thumb Code   326  aeabi_sdiv.o(.text)
+    _printf_int_common                       0x080004f3   Thumb Code   176  _printf_intcommon.o(.text)
+    _printf_char_common                      0x080005af   Thumb Code    32  _printf_char_common.o(.text)
+    _sputc                                   0x080005d5   Thumb Code    10  _sputc.o(.text)
+    __rt_udiv10                              0x080005df   Thumb Code    40  rtudiv10.o(.text)
+    TIM3_IRQHandler                          0x08000609   Thumb Code   362  action_handler.o(i.TIM3_IRQHandler)
+    TIM4_IRQHandler                          0x080007d5   Thumb Code    42  timer.o(i.TIM4_IRQHandler)
+    __ARM_common_switch8                     0x08000809   Thumb Code    28  state_machine.o(i.__ARM_common_switch8)
+    __system                                 0x08000825   Thumb Code     8  system_ctboard.o(i.__system)
+    action_handler_init                      0x0800082d   Thumb Code    58  action_handler.o(i.action_handler_init)
+    ah_door                                  0x08000871   Thumb Code   104  action_handler.o(i.ah_door)
+    ah_motor                                 0x08000925   Thumb Code    30  action_handler.o(i.ah_motor)
+    ah_show_exception                        0x08000961   Thumb Code   106  action_handler.o(i.ah_show_exception)
+    ah_show_state                            0x080009e9   Thumb Code    22  action_handler.o(i.ah_show_state)
+    ah_signal                                0x08000a19   Thumb Code     6  action_handler.o(i.ah_signal)
+    eh_7seg_display                          0x08000a81   Thumb Code    76  event_handler.o(i.eh_7seg_display)
+    eh_get_event                             0x08000ad9   Thumb Code   272  event_handler.o(i.eh_get_event)
+    fsm_handle_event                         0x08000c11   Thumb Code   372  state_machine.o(i.fsm_handle_event)
+    fsm_init                                 0x08000ddd   Thumb Code    38  state_machine.o(i.fsm_init)
+    hal_ct_lcd_write                         0x08000fb5   Thumb Code    38  hal_ct_lcd.o(i.hal_ct_lcd_write)
+    hal_fmc_init_sram                        0x08000fe1   Thumb Code   412  hal_fmc.o(i.hal_fmc_init_sram)
+    hal_gpio_init_alternate                  0x0800117d   Thumb Code   130  hal_gpio.o(i.hal_gpio_init_alternate)
+    hal_gpio_init_output                     0x080011ff   Thumb Code   152  hal_gpio.o(i.hal_gpio_init_output)
+    hal_pwr_set_overdrive                    0x08001297   Thumb Code     6  hal_pwr.o(i.hal_pwr_set_overdrive)
+    hal_rcc_reset                            0x0800129d   Thumb Code   138  hal_rcc.o(i.hal_rcc_reset)
+    hal_rcc_set_osc                          0x08001345   Thumb Code   148  hal_rcc.o(i.hal_rcc_set_osc)
+    hal_rcc_setup_clock                      0x080013dd   Thumb Code   132  hal_rcc.o(i.hal_rcc_setup_clock)
+    hal_rcc_setup_pll                        0x08001469   Thumb Code   314  hal_rcc.o(i.hal_rcc_setup_pll)
+    hal_timer_init_base                      0x080015b1   Thumb Code   104  hal_timer.o(i.hal_timer_init_base)
+    hal_timer_irq_clear                      0x0800161d   Thumb Code     8  hal_timer.o(i.hal_timer_irq_clear)
+    hal_timer_irq_set                        0x08001625   Thumb Code   122  hal_timer.o(i.hal_timer_irq_set)
+    hal_timer_irq_status                     0x080016a5   Thumb Code    28  hal_timer.o(i.hal_timer_irq_status)
+    hal_timer_start                          0x080016c1   Thumb Code    10  hal_timer.o(i.hal_timer_start)
+    main                                     0x080018e1   Thumb Code    28  main.o(i.main)
+    system_enter_run                         0x080018fd   Thumb Code    20  system_ctboard.o(i.system_enter_run)
+    timer_init                               0x08001911   Thumb Code    58  timer.o(i.timer_init)
+    timer_read                               0x08001959   Thumb Code     6  timer.o(i.timer_read)
+    timer_start                              0x08001965   Thumb Code     6  timer.o(i.timer_start)
+    timer_stop                               0x08001971   Thumb Code     8  timer.o(i.timer_stop)
+    Image$$RO$$Limit                         0x0800197c   Number         0  anon$$obj.o ABSOLUTE
+    Image$$RW$$Base                          0x20000000   Number         0  anon$$obj.o ABSOLUTE
+    elevator_position                        0x20000008   Data           2  action_handler.o(.data)
+    elevator_pattern                         0x2000000c   Data           4  action_handler.o(.data)
+    door_position                            0x20000010   Data           2  action_handler.o(.data)
+    door_pattern                             0x20000014   Data           4  action_handler.o(.data)
+    flag_F0_Reached                          0x2000001b   Data           1  event_handler.o(.data)
+    flag_F1_Reached                          0x2000001c   Data           1  event_handler.o(.data)
+    digit_pattern                            0x20000028   Data          10  event_handler.o(.data)
+    Image$$ZI$$Base                          0x20000038   Number         0  anon$$obj.o ABSOLUTE
+    Stack_Mem                                0x20000038   Data        8192  startup_ctboard.o(STACK)
+    Image$$ZI$$Limit                         0x20002038   Number         0  anon$$obj.o ABSOLUTE
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x08000271
+
+  Load Region LR_1 (Base: 0x08000000, Size: 0x000019b4, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000197c, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x08000000   0x08000000   0x000001ac   Data   RO          208    RESET               startup_ctboard.o
+    0x080001ac   0x080001ac   0x00000002   Code   RO          677    .ARM.Collect$$_printf_percent$$00000000  c_p.l(_printf_percent.o)
+    0x080001ae   0x080001ae   0x0000000a   Code   RO          676    .ARM.Collect$$_printf_percent$$0000000A  c_p.l(_printf_u.o)
+    0x080001b8   0x080001b8   0x00000004   Code   RO          696    .ARM.Collect$$_printf_percent$$00000017  c_p.l(_printf_percent_end.o)
+    0x080001bc   0x080001bc   0x00000038   Code   RO          678    .emb_text           c_p.l(rt_memcpy.o)
+    0x080001f4   0x080001f4   0x0000007c   Code   RO          201    .text               datainit_ctboard.o
+    0x08000270   0x08000270   0x00000024   Code   RO          209  * .text               startup_ctboard.o
+    0x08000294   0x08000294   0x0000002c   Code   RO          648    .text               c_p.l(__2sprintf.o)
+    0x080002c0   0x080002c0   0x0000006c   Code   RO          652    .text               c_p.l(__printf.o)
+    0x0800032c   0x0800032c   0x0000006c   Code   RO          654    .text               c_p.l(_printf_dec.o)
+    0x08000398   0x08000398   0x0000015a   Code   RO          682    .text               c_p.l(aeabi_sdiv.o)
+    0x080004f2   0x080004f2   0x000000b0   Code   RO          690    .text               c_p.l(_printf_intcommon.o)
+    0x080005a2   0x080005a2   0x00000002   PAD
+    0x080005a4   0x080005a4   0x00000030   Code   RO          692    .text               c_p.l(_printf_char_common.o)
+    0x080005d4   0x080005d4   0x0000000a   Code   RO          694    .text               c_p.l(_sputc.o)
+    0x080005de   0x080005de   0x00000028   Code   RO          697    .text               c_p.l(rtudiv10.o)
+    0x08000606   0x08000606   0x00000002   PAD
+    0x08000608   0x08000608   0x000001cc   Code   RO            1    i.TIM3_IRQHandler   action_handler.o
+    0x080007d4   0x080007d4   0x00000034   Code   RO          163    i.TIM4_IRQHandler   timer.o
+    0x08000808   0x08000808   0x0000001c   Code   RO          158    i.__ARM_common_switch8  state_machine.o
+    0x08000824   0x08000824   0x00000008   Code   RO          213    i.__system          system_ctboard.o
+    0x0800082c   0x0800082c   0x00000044   Code   RO            2    i.action_handler_init  action_handler.o
+    0x08000870   0x08000870   0x000000b4   Code   RO            3    i.ah_door           action_handler.o
+    0x08000924   0x08000924   0x0000003c   Code   RO            4    i.ah_motor          action_handler.o
+    0x08000960   0x08000960   0x00000088   Code   RO            5    i.ah_show_exception  action_handler.o
+    0x080009e8   0x080009e8   0x00000030   Code   RO            6    i.ah_show_state     action_handler.o
+    0x08000a18   0x08000a18   0x0000000c   Code   RO            7    i.ah_signal         action_handler.o
+    0x08000a24   0x08000a24   0x0000005c   Code   RO          329    i.create_pattern_mask  hal_gpio.o
+    0x08000a80   0x08000a80   0x00000058   Code   RO           83    i.eh_7seg_display   event_handler.o
+    0x08000ad8   0x08000ad8   0x00000138   Code   RO           84    i.eh_get_event      event_handler.o
+    0x08000c10   0x08000c10   0x000001cc   Code   RO          141    i.fsm_handle_event  state_machine.o
+    0x08000ddc   0x08000ddc   0x0000003c   Code   RO          142    i.fsm_init          state_machine.o
+    0x08000e18   0x08000e18   0x0000019c   Code   RO          519    i.get_irq_param     hal_timer.o
+    0x08000fb4   0x08000fb4   0x0000002c   Code   RO          289    i.hal_ct_lcd_write  hal_ct_lcd.o
+    0x08000fe0   0x08000fe0   0x0000019c   Code   RO          311    i.hal_fmc_init_sram  hal_fmc.o
+    0x0800117c   0x0800117c   0x00000082   Code   RO          334    i.hal_gpio_init_alternate  hal_gpio.o
+    0x080011fe   0x080011fe   0x00000098   Code   RO          337    i.hal_gpio_init_output  hal_gpio.o
+    0x08001296   0x08001296   0x00000006   Code   RO          438    i.hal_pwr_set_overdrive  hal_pwr.o
+    0x0800129c   0x0800129c   0x000000a8   Code   RO          482    i.hal_rcc_reset     hal_rcc.o
+    0x08001344   0x08001344   0x00000098   Code   RO          483    i.hal_rcc_set_osc   hal_rcc.o
+    0x080013dc   0x080013dc   0x0000008c   Code   RO          485    i.hal_rcc_setup_clock  hal_rcc.o
+    0x08001468   0x08001468   0x00000148   Code   RO          486    i.hal_rcc_setup_pll  hal_rcc.o
+    0x080015b0   0x080015b0   0x0000006c   Code   RO          525    i.hal_timer_init_base  hal_timer.o
+    0x0800161c   0x0800161c   0x00000008   Code   RO          529    i.hal_timer_irq_clear  hal_timer.o
+    0x08001624   0x08001624   0x00000080   Code   RO          530    i.hal_timer_irq_set  hal_timer.o
+    0x080016a4   0x080016a4   0x0000001c   Code   RO          531    i.hal_timer_irq_status  hal_timer.o
+    0x080016c0   0x080016c0   0x0000000a   Code   RO          535    i.hal_timer_start   hal_timer.o
+    0x080016ca   0x080016ca   0x00000002   PAD
+    0x080016cc   0x080016cc   0x00000128   Code   RO          214    i.init_FMC_SRAM     system_ctboard.o
+    0x080017f4   0x080017f4   0x00000002   Code   RO          215    i.init_FPU          system_ctboard.o
+    0x080017f6   0x080017f6   0x00000002   PAD
+    0x080017f8   0x080017f8   0x00000010   Code   RO          216    i.init_LCD          system_ctboard.o
+    0x08001808   0x08001808   0x000000b8   Code   RO          217    i.init_SystemClock  system_ctboard.o
+    0x080018c0   0x080018c0   0x00000020   Code   RO          345    i.intercept_overwrite_register  hal_gpio.o
+    0x080018e0   0x080018e0   0x0000001c   Code   RO          126    i.main              main.o
+    0x080018fc   0x080018fc   0x00000014   Code   RO          218    i.system_enter_run  system_ctboard.o
+    0x08001910   0x08001910   0x00000048   Code   RO          164    i.timer_init        timer.o
+    0x08001958   0x08001958   0x0000000c   Code   RO          165    i.timer_read        timer.o
+    0x08001964   0x08001964   0x0000000c   Code   RO          166    i.timer_start       timer.o
+    0x08001970   0x08001970   0x0000000c   Code   RO          167    i.timer_stop        timer.o
+
+
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x0800197c, Size: 0x00000038, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x0800197c   0x00000018   Data   RW            9    .data               action_handler.o
+    0x20000018   0x08001994   0x0000001a   Data   RW           87    .data               event_handler.o
+    0x20000032   0x080019ae   0x00000001   Data   RW          143    .data               state_machine.o
+    0x20000033   0x080019af   0x00000001   PAD
+    0x20000034   0x080019b0   0x00000002   Data   RW          168    .data               timer.o
+
+
+    Execution Region ER_ZI (Exec base: 0x20000038, Load base: 0x080019b4, Size: 0x00002000, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000038        -       0x00002000   Zero   RW          206    STACK               startup_ctboard.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       964        276          0         24          0      48484   action_handler.o
+       124         50          0          0          0        464   datainit_ctboard.o
+       400         52          0         26          0       3793   event_handler.o
+        44          6          0          0          0        623   hal_ct_lcd.o
+       412          0          0          0          0        920   hal_fmc.o
+       406         10          0          0          0       3097   hal_gpio.o
+         6          0          0          0          0        536   hal_pwr.o
+       788         56          0          0          0       2564   hal_rcc.o
+       694         62          0          0          0       4325   hal_timer.o
+        28          0          0          0          0        471   main.o
+        36          8        428          0       8192        832   startup_ctboard.o
+       548        120          0          1          0       2478   state_machine.o
+       526         50          0          0          0       7682   system_ctboard.o
+       160         40          0          2          0       2355   timer.o
+
+    ----------------------------------------------------------------------
+      5140        730        428         56       8192      78624   Object Totals
+         0          0          0          0          0          0   (incl. Generated)
+         4          0          0          3          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+        44          4          0          0          0         84   __2sprintf.o
+       108          0          0          0          0         76   __printf.o
+        48          6          0          0          0         88   _printf_char_common.o
+       108         18          0          0          0         76   _printf_dec.o
+       176          0          0          0          0         84   _printf_intcommon.o
+         2          0          0          0          0          0   _printf_percent.o
+         4          0          0          0          0          0   _printf_percent_end.o
+        10          0          0          0          0          0   _printf_u.o
+        10          0          0          0          0         60   _sputc.o
+       346          0          0          0          0         92   aeabi_sdiv.o
+        56          0          0          0          0         68   rt_memcpy.o
+        40          0          0          0          0         60   rtudiv10.o
+
+    ----------------------------------------------------------------------
+       956         28          0          0          0        688   Library Totals
+         4          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       952         28          0          0          0        688   c_p.l
+
+    ----------------------------------------------------------------------
+       956         28          0          0          0        688   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      6096        758        428         56       8192      77220   Grand Totals
+      6096        758        428         56       8192      77220   ELF Image Totals
+      6096        758        428         56          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 6524 (   6.37kB)
+    Total RW  Size (RW Data + ZI Data)              8248 (   8.05kB)
+    Total ROM Size (Code + RO Data + RW Data)       6580 (   6.43kB)
+
+==============================================================================
+

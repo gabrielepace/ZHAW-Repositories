@@ -1,0 +1,88 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    color: black;
+    margin-top: 100px;
+}
+
+.row {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.col-12 {
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.finished input {
+    color: grey;
+}
+
+@media only screen and (max-width: 800px) {
+    .button-group {
+        width: 100%;
+    }
+
+    #taskList {
+        width: 100%;
+    }
+}
+
+#headerTitle {
+    font-size: 3.4em;
+}
+
+#headerSubtitle {
+    position: absolute;
+    padding-top: 75px;
+}
+
+#notification {
+    position: absolute;
+    right: 10px;
+    top: 120px;
+    display: none;
+}
+
+#container-footer {
+    margin: 0 auto;
+    font-size: small;
+}
+
+#taskList ul {
+    padding-inline-start: 0;
+}
+
+#taskList li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+#taskList .form-check {
+    display: flex;
+    align-items: center;
+}
+
+#taskList .form-check input[type=checkbox] {
+    margin-top: 0;
+}
+
+#createTask {
+    margin-left: 20px;
+}
+
+#testPageLink {
+    padding-top: 15px;
+}
+
+#schoolClassNameTitle {
+    padding-top: 3%;
+    margin-bottom: auto;
+}

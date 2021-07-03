@@ -1,0 +1,14 @@
+body {
+	background-image: url(img/hungryStudentBackground.jpg);
+	background-repeat: repeat-y;
+    background-size: 100%;
+}
+
+.formularContent {
+    padding: 20px 50px;
+}
+
+.content {
+	background-color: white;
+}
+

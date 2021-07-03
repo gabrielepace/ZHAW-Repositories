@@ -1,0 +1,117 @@
+<create-issue>
+  <div class="card-body">
+    <form onsubmit={ onSubmit }>
+      <div class="row">
+        <div class="col-6 col-md-2">
+          <select name="priority" class="form-control { state.errors.priority ? 'is-invalid' : '' }" onchange={ onPriorityChange }>
+            <option value="" disabled selected={ state.priority === '' }>Priorität</option>
+            <option value="hoch" selected={ state.priority === 'hoch' }>Hoch</option>
+            <option value="mittel" selected={ state.priority === 'mittel' }>Mittel</option>
+            <option value="tief" selected={ state.priority === 'tief' }>Tief</option>
+          </select>
+          <div if={ state.errors.priority } class="invalid-feedback">{ state.errors.priority }</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <input type="text" name="due" class="form-control { state.errors.dueDate ? 'is-invalid' : '' }" data-toggle="datepicker" autocomplete="off" placeholder="Datum wählen" onkeyup={ onDueDateChange } value={ state.dueDate }>
+          <div if={ state.errors.dueDate } class="invalid-feedback">{ state.errors.dueDate }</div>
+        </div>
+        <div class="col mt-3 mt-md-0">
+          <input type="text" name="task" class="form-control { state.errors.title ? 'is-invalid' : '' }" placeholder="Issue schreiben" onkeyup={ onTitleChange } value={ state.title }>
+          <div if={ state.errors.title } class="invalid-feedback">{ state.errors.title }</div>
+        </div>
+        <div class="col-md-3 col-xl-2 mt-3 mt-md-0 text-right">
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-plus mr-2"></i>
+            Erfassen
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    export default {
+      onBeforeMount() {
+        this.state = {
+          priority: '',
+          title: '',
+          dueDate: '',
+          errors: {},
+        };
+      },
+      validate(values = this.state) {
+        const errors = {};
+
+        // validate priority
+        if (!values.priority) {
+          errors.priority = 'Priorität ist erforderlich';
+        } else if (['hoch', 'mittel', 'tief'].indexOf(values.priority) < 0) {
+          errors.priority = 'Priorität ungültig';
+        }
+
+        // validate title
+        if (!values.title || values.title.trim().length === 0) {
+          errors.title = 'Titel ist erforderlich';
+        }
+
+        // validate due date
+        if (!values.dueDate) {
+          errors.dueDate = 'Datum ist erforderlich';
+        } else if (!values.dueDate.match(/^[0-9]{4}(-[0-9]{2}){2}$/)) {
+          errors.dueDate = 'Datum ungültig';
+        }
+
+        return errors;
+      },
+      onMounted() {
+        $('[data-toggle="datepicker"]').datepicker({
+          format: 'yyyy-mm-dd',
+        }).on('pick.datepicker', (e) => {
+          const date = e.date.toISOString().split('T')[0];
+          this.update({
+            dueDate: date,
+            errors: { ...this.state.errors, dueDate: this.validate({ dueDate: date }).dueDate },
+          });
+        });
+      },
+      onPriorityChange(e) {
+        this.update({
+          priority: e.target.value,
+          errors: { ...this.state.errors, priority: this.validate({ priority: e.target.value }).priority },
+        });
+      },
+      onTitleChange(e) {
+        this.update({
+          title: e.target.value,
+          errors: { ...this.state.errors, title: this.validate({ title: e.target.value }).title },
+        });
+      },
+      onDueDateChange(e) {
+        this.update({
+          dueDate: e.target.value,
+          errors: { ...this.state.errors, dueDate: this.validate({ dueDate: e.target.value }).dueDate },
+        });
+      },
+      async onSubmit(e) {
+        e.preventDefault();
+        const errors = this.validate();
+
+        if (Object.keys(errors).length) {
+          this.update({ errors });
+        } else {
+          const serverErrors = await this.props.addIssue(this.state.priority, this.state.title, this.state.dueDate, false);
+
+          if (serverErrors) {
+            this.update({ errors: serverErrors });
+          } else {
+            this.update({
+              priority: '',
+              title: '',
+              dueDate: '',
+            });
+          }
+        }
+      },
+    };
+  </script>
+</create-issue>

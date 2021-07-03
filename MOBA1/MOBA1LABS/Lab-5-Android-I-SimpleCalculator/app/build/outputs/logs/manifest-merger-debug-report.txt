@@ -1,0 +1,208 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:2:1-24:12
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/ba68f51fb9bd7fd3231d46ab27514c39/navigation-fragment-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/e7056c34b5ad0a93ef45e2070427ea96/jetified-fragment-ktx-1.2.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-ui-ktx:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/d73f596f805eb584fe59ad63dd13eee2/navigation-ui-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/edeae7942afeb7fe04e00f56a1c0a7e1/navigation-runtime-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/c9bdc2de93bd06666f7d4cf83cbdd4b0/navigation-common-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/002013ceb6c73bfe5bc7840c89180075/jetified-activity-ktx-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.3.2] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/a7914e058f1ea67719a7b447e620aa28/jetified-core-ktx-1.3.2/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/99fd13dccffddf773d224ebbfc283927/jetified-lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/9127ec8ea4b83b428f8905f53db27eb6/jetified-lifecycle-livedata-core-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/27a3bc4b59d165f02935ffaf493e4417/jetified-lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-ui:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/88c9b0297b5920d4c6928223e2ce6613/navigation-ui-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.2.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/4b5bf9de51d89be3fa74e63160c491d0/material-1.2.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/3c20beb2724bfdace514d09dcd2c23e2/constraintlayout-2.0.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/8053239dec2a17c6866096f5057647cb/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/da523afc89498e9b8e5b314e169a8fa0/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/d1a67a3e37f93f026b4e2ceb6f292257/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/820e17008c4790e2a1169fa6ccd2da84/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/10287d9b4738833a47c9d04e721bfe59/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/9e60f461112c8ec9d6c35ccbae902f7f/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/861917a5ed0ab2d335d39a80c785696f/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-fragment:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/4cfcae1eda3317ece28445afef789ca5/navigation-fragment-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.2.4] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/d45d36ea1e12c5a120cd06f598245114/fragment-1.2.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/c30a458eafabd195fb6e052a4a4d4d78/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/d8f6d95ecea878223faad6a70dc78f40/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/a92f0211817970e5bde9a288e7266c61/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.3.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/8eee92e4f26e747388aaadc00b9b3dba/transition-1.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.loader:loader:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/609c0950fce9dbe590edb6aff6259407/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/ea89e42c0ef27a838d399b9af96296fd/navigation-runtime-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/4ac016602215c7d80489e253a9cef9c7/jetified-activity-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/91f63158f52b4b8d5511faea060492cd/navigation-common-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.3.2] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/7aac5c5c522df5bfe2bbd59f99e79e78/core-1.3.2/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/1ec69c91971ca3ec2e7215d729a3ce1d/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/1786a86e929ca2348d6e5c9dfc028181/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/788b2bdcb9a4ded323c6661047001528/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/e1b43a3160364131cdd0af159ac4be5b/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/ca1795d020228589772e1101eb1ebd52/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/0ecf1e18a0788bd0d90fa09204a6c3fe/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/2b1bb92b20f29da1702161b3f95f8b17/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/a5e3484f0a5fa7443413ad429fdadbd7/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/a779d724f2c48e462f73e356f8933292/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/bb8a18ed3a80bcc1563d0b7173f9b368/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/5d5b220afebefb1529178971522d5d76/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/d8903238b4e597dc87ac0792a3ccd8ba/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
+INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:2:1-24:12
+	package
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:3:5-40
+		INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml
+		INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:2:1-24:12
+		INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:2:1-24:12
+		INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:5:5-22:19
+MERGED from [com.google.android.material:material:1.2.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/4b5bf9de51d89be3fa74e63160c491d0/material-1.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.2.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/4b5bf9de51d89be3fa74e63160c491d0/material-1.2.1/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/3c20beb2724bfdace514d09dcd2c23e2/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/3c20beb2724bfdace514d09dcd2c23e2/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.3.2] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/7aac5c5c522df5bfe2bbd59f99e79e78/core-1.3.2/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.2] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/7aac5c5c522df5bfe2bbd59f99e79e78/core-1.3.2/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/788b2bdcb9a4ded323c6661047001528/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/788b2bdcb9a4ded323c6661047001528/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.3.2] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/7aac5c5c522df5bfe2bbd59f99e79e78/core-1.3.2/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:11:9-40
+activity#com.example.firstexample2.MainActivity
+ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:12:9-21:20
+	android:label
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:14:13-45
+	android:theme
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:15:13-56
+	android:name
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:13:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:16:13-20:29
+action#android.intent.action.MAIN
+ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:17:17-69
+	android:name
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:17:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml:19:27-74
+uses-sdk
+INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml
+INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/ba68f51fb9bd7fd3231d46ab27514c39/navigation-fragment-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/ba68f51fb9bd7fd3231d46ab27514c39/navigation-fragment-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/e7056c34b5ad0a93ef45e2070427ea96/jetified-fragment-ktx-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/e7056c34b5ad0a93ef45e2070427ea96/jetified-fragment-ktx-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/d73f596f805eb584fe59ad63dd13eee2/navigation-ui-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/d73f596f805eb584fe59ad63dd13eee2/navigation-ui-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/edeae7942afeb7fe04e00f56a1c0a7e1/navigation-runtime-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/edeae7942afeb7fe04e00f56a1c0a7e1/navigation-runtime-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/c9bdc2de93bd06666f7d4cf83cbdd4b0/navigation-common-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/c9bdc2de93bd06666f7d4cf83cbdd4b0/navigation-common-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/002013ceb6c73bfe5bc7840c89180075/jetified-activity-ktx-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/002013ceb6c73bfe5bc7840c89180075/jetified-activity-ktx-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.3.2] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/a7914e058f1ea67719a7b447e620aa28/jetified-core-ktx-1.3.2/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.3.2] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/a7914e058f1ea67719a7b447e620aa28/jetified-core-ktx-1.3.2/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/99fd13dccffddf773d224ebbfc283927/jetified-lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/99fd13dccffddf773d224ebbfc283927/jetified-lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/9127ec8ea4b83b428f8905f53db27eb6/jetified-lifecycle-livedata-core-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/9127ec8ea4b83b428f8905f53db27eb6/jetified-lifecycle-livedata-core-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/27a3bc4b59d165f02935ffaf493e4417/jetified-lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/27a3bc4b59d165f02935ffaf493e4417/jetified-lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/88c9b0297b5920d4c6928223e2ce6613/navigation-ui-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/88c9b0297b5920d4c6928223e2ce6613/navigation-ui-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.2.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/4b5bf9de51d89be3fa74e63160c491d0/material-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.2.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/4b5bf9de51d89be3fa74e63160c491d0/material-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/3c20beb2724bfdace514d09dcd2c23e2/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/3c20beb2724bfdace514d09dcd2c23e2/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/8053239dec2a17c6866096f5057647cb/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/8053239dec2a17c6866096f5057647cb/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/da523afc89498e9b8e5b314e169a8fa0/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/da523afc89498e9b8e5b314e169a8fa0/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/d1a67a3e37f93f026b4e2ceb6f292257/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/d1a67a3e37f93f026b4e2ceb6f292257/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/820e17008c4790e2a1169fa6ccd2da84/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/820e17008c4790e2a1169fa6ccd2da84/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/10287d9b4738833a47c9d04e721bfe59/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/10287d9b4738833a47c9d04e721bfe59/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/9e60f461112c8ec9d6c35ccbae902f7f/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/9e60f461112c8ec9d6c35ccbae902f7f/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/861917a5ed0ab2d335d39a80c785696f/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/861917a5ed0ab2d335d39a80c785696f/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/4cfcae1eda3317ece28445afef789ca5/navigation-fragment-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/4cfcae1eda3317ece28445afef789ca5/navigation-fragment-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.4] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/d45d36ea1e12c5a120cd06f598245114/fragment-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.4] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/d45d36ea1e12c5a120cd06f598245114/fragment-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/c30a458eafabd195fb6e052a4a4d4d78/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/c30a458eafabd195fb6e052a4a4d4d78/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/d8f6d95ecea878223faad6a70dc78f40/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/d8f6d95ecea878223faad6a70dc78f40/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/a92f0211817970e5bde9a288e7266c61/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/a92f0211817970e5bde9a288e7266c61/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.3.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/8eee92e4f26e747388aaadc00b9b3dba/transition-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.3.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/8eee92e4f26e747388aaadc00b9b3dba/transition-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.loader:loader:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/609c0950fce9dbe590edb6aff6259407/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/609c0950fce9dbe590edb6aff6259407/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/ea89e42c0ef27a838d399b9af96296fd/navigation-runtime-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/ea89e42c0ef27a838d399b9af96296fd/navigation-runtime-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/4ac016602215c7d80489e253a9cef9c7/jetified-activity-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/4ac016602215c7d80489e253a9cef9c7/jetified-activity-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/91f63158f52b4b8d5511faea060492cd/navigation-common-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.3.1] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/91f63158f52b4b8d5511faea060492cd/navigation-common-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.2] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/7aac5c5c522df5bfe2bbd59f99e79e78/core-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.2] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/7aac5c5c522df5bfe2bbd59f99e79e78/core-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/1ec69c91971ca3ec2e7215d729a3ce1d/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/1ec69c91971ca3ec2e7215d729a3ce1d/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/1786a86e929ca2348d6e5c9dfc028181/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/1786a86e929ca2348d6e5c9dfc028181/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/788b2bdcb9a4ded323c6661047001528/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/788b2bdcb9a4ded323c6661047001528/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/e1b43a3160364131cdd0af159ac4be5b/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/e1b43a3160364131cdd0af159ac4be5b/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/ca1795d020228589772e1101eb1ebd52/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/ca1795d020228589772e1101eb1ebd52/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/0ecf1e18a0788bd0d90fa09204a6c3fe/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/0ecf1e18a0788bd0d90fa09204a6c3fe/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/2b1bb92b20f29da1702161b3f95f8b17/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/2b1bb92b20f29da1702161b3f95f8b17/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/a5e3484f0a5fa7443413ad429fdadbd7/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/a5e3484f0a5fa7443413ad429fdadbd7/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/a779d724f2c48e462f73e356f8933292/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/a779d724f2c48e462f73e356f8933292/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/bb8a18ed3a80bcc1563d0b7173f9b368/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/bb8a18ed3a80bcc1563d0b7173f9b368/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/5d5b220afebefb1529178971522d5d76/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/5d5b220afebefb1529178971522d5d76/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/d8903238b4e597dc87ac0792a3ccd8ba/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/gabrielepace/.gradle/caches/transforms-2/files-2.1/d8903238b4e597dc87ac0792a3ccd8ba/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml
+INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml
+		INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml
+		ADDED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml
+		INJECTED from /home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/src/main/AndroidManifest.xml

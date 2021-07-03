@@ -1,0 +1,13 @@
+h1 {
+    left: 4rem;
+}
+
+h1>small{
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 100;
+}
+
+.task-completed {
+    opacity: 0.5;
+}

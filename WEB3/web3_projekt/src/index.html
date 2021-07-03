@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Issue Tracker">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	
+    <title>Issue Tracker</title>
+	
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/node_modules/@chenfengyuan/datepicker/dist/datepicker.min.css">
+
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/favicon/todo.ico">
+</head>
+<body>
+	<navigation></navigation>
+	<app></app>
+	<pagefooter></pagefooter>
+
+	<!-- JavaScript -->
+	<script type="text/javascript" src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+	<script type="text/javascript" src="/node_modules/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="/node_modules/jquery-ui-dist/jquery-ui.js"></script>
+	<script type="text/javascript" src="/node_modules/@fortawesome/fontawesome-free/js/all.js"></script>
+	<script type="text/javascript" src="/node_modules/uuid-tool/dist/index.js"></script>
+	<script type="text/javascript" src="/node_modules/@chenfengyuan/datepicker/dist/datepicker.min.js"></script>
+	<script type="text/javascript" src="/node_modules/riot/riot+compiler.min.js"></script>
+	<script type="text/javascript" src="/node_modules/@riotjs/route/route.js"></script>
+
+	<script src="assets/js/models/issue.js"></script>
+	<script src="assets/js/models/project.js"></script>
+	<script src="assets/js/services/projectService.js"></script>
+	<script src="assets/js/services/issuesService.js"></script>
+
+	<!-- Riot.js components -->
+	<script type="riot" src="assets/js/components/app.riot"></script>
+	<script type="riot" src="assets/js/components/navigation.riot"></script>
+	<script type="riot" src="assets/js/components/create-project.riot"></script>
+	<script type="riot" src="assets/js/components/projects-list.riot"></script>
+	<script type="riot" src="assets/js/components/create-issue.riot"></script>
+	<script type="riot" src="assets/js/components/issues-list.riot"></script>
+	<script type="riot" src="assets/js/components/loading.riot"></script>
+	<script type="riot" src="assets/js/components/pagefooter.riot"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+</html>

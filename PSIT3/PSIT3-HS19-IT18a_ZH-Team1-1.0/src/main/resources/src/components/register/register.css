@@ -1,0 +1,8 @@
+.register-form {
+    margin: 50px auto;
+    max-width: 500px;
+}
+
+button + button {
+    margin-left: 20px;
+}

@@ -1,0 +1,26 @@
+{
+  "src_folders" : ["tests/nightwatch"],
+  "output_folder" : "tests_output",
+  "webdriver": {
+    "server_path": "./node_modules/geckodriver/bin/geckodriver",
+    "start_process" : true
+  },
+
+  "test_settings" : {
+    "default" : {
+        "launch_url" : "http://dev.rehearsal.ch",
+      "desiredCapabilities" : {
+        "browserName" : "firefox",
+        "alwaysMatch": {
+          "moz:firefoxOptions": {
+            "args": [
+              "--headless"
+            ]
+          }
+        },
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
+    }
+  }
+}

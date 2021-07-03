@@ -1,0 +1,90 @@
+[
+    {
+      "id": 1,
+      "name": "Rick Rolla",
+      "session": 1,
+      "parts": [
+        {
+          "id": 1,
+          "instr": "guitar",
+          "artist": {
+            "id": 1,
+            "user": 1,
+            "name": "admin",
+            "info": ""
+          }
+        }
+      ],
+      "versions": [
+        {
+          "id": 1,
+          "track": 1,
+          "audiofile": "http://127.0.0.1:8000/media/versions/rickroll.mp3",
+          "amplispectrogram": "http://127.0.0.1:8000/media/amplispec/Track1.23.png",
+          "length": "03'32",
+          "info": "asdf",
+          "date_created": "2020-04-02T15:19:20.625Z",
+          "last_modified": "2020-04-02T15:19:20.625Z"
+        },
+        {
+          "id": 2,
+          "track": 1,
+          "audiofile": "http://127.0.0.1:8000/media/versions/rickroll_gxGYpFy.mp3",
+          "amplispectrogram": "http://127.0.0.1:8000/media/amplispec/Track1.23.png",
+          "length": "03'32",
+          "info": "another version\r\n\r\nbut it sounds awfully familiar",
+          "date_created": "2020-04-02T15:20:42.609Z",
+          "last_modified": "2020-04-02T15:20:42.609Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "This is some completely different track",
+      "session": 1,
+      "parts": [
+        {
+          "id": 1,
+          "instr": "guitar",
+          "artist": {
+            "id": 1,
+            "user": 1,
+            "name": "admin",
+            "info": ""
+          }
+        },
+        {
+          "id": 2,
+          "instr": "furzkissen",
+          "artist": {
+            "id": 1,
+            "user": 1,
+            "name": "admin",
+            "info": ""
+          }
+        }
+      ],
+      "versions": [
+        {
+          "id": 3,
+          "track": 2,
+          "audiofile": "http://127.0.0.1:8000/media/versions/rickroll_zT4jjDh.mp3",
+          "amplispectrogram": "http://127.0.0.1:8000/media/amplispec/Track1.23.png",
+          "length": "03'32",
+          "info": "asdffsdhjlkfslkfhlhlfljhfdjhlsfal",
+          "date_created": "2020-04-02T15:35:34.660Z",
+          "last_modified": "2020-04-02T15:35:34.660Z"
+        },
+        {
+          "id": 4,
+          "track": 2,
+          "audiofile": "http://127.0.0.1:8000/media/versions/rickroll_OQHxlK9.mp3",
+          "amplispectrogram": "/media/amplispec/This%20is%20some%20completely%20different%20track.4.png",
+          "length": "03'32",
+          "info": "another comp-uh-letely diff-uh-rent version\r\n\r\n\r\nhuh!",
+          "date_created": "2020-04-02T16:16:31.828Z",
+          "last_modified": "2020-04-02T16:16:31.828Z"
+        }
+      ]
+    }
+]

@@ -1,0 +1,39 @@
+{
+    "id": 13,
+    "name": "Track1",
+    "session": 7,
+    "parts": [
+        {
+            "id": 6,
+            "instr": "Guitar",
+            "artist": {
+                "id": 8,
+                "user": 8,
+                "name": "admin",
+                "info": ""
+            }
+        }
+    ],
+    "versions": [
+        {
+            "id": 23,
+            "track": 13,
+            "audiofile": "http://127.0.0.1:8000/media/versions/rickroll_U8yG6km.mp3",
+            "amplispectrogram": "http://127.0.0.1:8000/media/amplispec/Track1.23.png",
+            "length": "03'32",
+            "info": "info of track 1",
+            "date_created": "2020-04-18T11:41:22.703Z",
+            "last_modified": "2020-04-18T11:41:22.703Z"
+        },
+        {
+            "id": 24,
+            "track": 13,
+            "audiofile": "http://127.0.0.1:8000/media/versions/rickroll_U8yG6km_lnL0w6x.mp3",
+            "amplispectrogram": "http://127.0.0.1:8000/media/amplispec/Track1.24.png",
+            "length": "03'32",
+            "info": "info of version 2",
+            "date_created": "2020-04-18T11:41:52.786Z",
+            "last_modified": "2020-04-18T11:41:52.786Z"
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">NUI TODO</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="app_title">Inbox</string>
+    <string name="complete_todo_activity_title">Recycle Bin</string>
+    <string name="all_tags_title">Tags</string>
+    <string name="settings_title">App Info</string>
+
+    <string name="nav_pending_todos_text">Inbox</string>
+    <string name="nav_completed_todos_text">Recycle Bin</string>
+    <string name="nav_tags_text">Tags</string>
+    <string name="nav_settings_text">Settings</string>
+
+    <string name="no_pending_todo_text">No ToDo Available</string>
+    <string name="pending_todo_demo_title">Inbox ToDo demo title</string>
+    <string name="pending_todo_demo_content">Inbox ToDo demo content</string>
+    <string name="tag_title_demo_text">Demo Tag title</string>
+
+    <string name="completed_todo_demo_title">Completed ToDo demo title</string>
+    <string name="completed_todo_demo_content">Completed ToDo demo content</string>
+
+    <string name="todo_info_demo_tag_text">NUI</string>
+    <string name="todo_info_demo_date_text">16 Dec, 2020</string>
+    <string name="todo_info_demo_time_from_text">14:00</string>
+
+    <string name="no_completed_todo_text">No Completed ToDo in Recycle Bin Available</string>
+    <string name="no_tags_available_text">No Tags Available</string>
+
+    <string name="option_completed_search_text">Search</string>
+    <string name="option_completed_delete_text">Delete All</string>
+    <string name="option_completed_settings_text">Settings</string>
+
+    <string name="option_tags_search_text">Search</string>
+    <string name="option_tag_settings_text">App Info</string>
+    <string name="option_save_todo_text">Save ToDo</string>
+    <string name="option_tag_edit_text">Edit</string>
+    <string name="option_tag_del_text">Remove</string>
+
+    <string name="option_pending_search_text">Search</string>
+    <string name="option_pending_completed_text">Recycle Bin</string>
+    <string name="option_pending_settings_text">App Info</string>
+    <string name="option_all_tags_text">All Tags</string>
+
+    <string name="add_todo_dialog_title">Add New ToDo</string>
+    <string name="save_todo_dialog_title">Save ToDo</string>
+    <string name="edit_todo_dialog_title">Edit ToDo</string>
+    <string name="todo_title_hint">Enter ToDo title</string>
+    <string name="todo_content_hint">Enter ToDo content</string>
+    <string name="todo_date_hint">Enter ToDo date</string>
+    <string name="todo_time_hint">Enter ToDo time</string>
+    <string name="add_todo_dialog_positive_text">Add New Todo</string>
+    <string name="add_todo_dialog_cancel_text">Cancel</string>
+    <string name="todo_title_add_success_msg">ToDo added successfully!</string>
+
+    <string name="add_tag_dialog_title">Add New Tag</string>
+    <string name="edit_tag_dialog_title">Edit Tag</string>
+    <string name="add_tag_dialog_positive_text">Add new Tag</string>
+    <string name="edit_tag_dialog_positive_text">Save</string>
+    <string name="add_tag_dialog_cancel_text">Cancel</string>
+    <string name="add_tag_text_text_color_text">Tag Text Color</string>
+    <string name="add_tag_text_background_color_text">Tag Background Color</string>
+    <string name="tag_title_add_success_msg">Tag added successfully !</string>
+    <string name="tag_delete_dialog_title">Tag delete Confirmation</string>
+    <string name="tag_delete_dialog_msg">If you delete then your ToDos associated with this Tag will also be delete. Do you really want to deleted ?</string>
+    <string name="tag_delete_cancel">Cancel</string>
+    <string name="tag_delete_yes">Delete</string>
+    <string name="tag_deleted_success">Tag deleted successfully!</string>
+    <string name="tag_no_delete">Tag not deleted !</string>
+    <string name="edit_tag_dialog_cancel_text">Cancel</string>
+    <string name="tag_edit_yes">Save</string>
+    <string name="tag_edit_cancel">Cancel</string>
+    <string name="tag_saved_success">Tag saved successfully !</string>
+    <string name="tag_no_save">Tag not changed !</string>
+    <string name="tag_create_dialog_title_text">Tag create dialog</string>
+    <string name="no_tag_in_the_db_text">There is no Tag in the database. You need to create a Tag first to continue.</string>
+    <string name="create_new_tag">Create new Tag</string>
+
+
+    <string name="tag_title_hint">Enter Tag title</string>
+    <string name="edit_tag_title_hint">Enter new Tag title</string>
+    <string name="pref_category_title_about">Developer Info</string>
+    <string name="edit">Edit</string>
+    <string name="remove">Remove</string>
+</resources>

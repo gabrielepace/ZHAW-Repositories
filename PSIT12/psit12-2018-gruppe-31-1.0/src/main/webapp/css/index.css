@@ -1,0 +1,111 @@
+
+#mapid {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 0;
+  }
+  
+#content {
+	height: 100%;
+	width: 100%;
+	padding: 20px;
+	z-index: 1;
+}
+
+#loginSpace {
+	position: fixed;
+	top: 20px;
+	right: 30px;
+	padding: 10px 20px;
+	background-color: white;
+	z-index:1;
+}
+
+#logoutSpace {
+	margin-bottom: 8px;
+}
+
+#menuImage {
+    width: 30px;
+    height: 35px;
+}
+
+#searchBar {
+    width: 300px;
+	height: 45px;
+	padding-left: 5px;
+	z-index: 1;
+}
+
+#sidebar, #sidebar-marker {
+    position: fixed;
+    margin-top: 75px;
+    margin-left: 20px;
+	min-width: 300px;
+	max-width: 320px;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	padding: 15px;
+	background: #FCFCFC;
+	color: #222;
+	transition: all 0.3s;
+	box-shadow: 7px 7px 5px #AAA;
+	overflow-y: scroll; 
+	height: 88%;
+}
+
+#sidebar.closed, #sidebar-marker.closed {
+	margin-left: -320px;
+	/* removes shadow when closed */
+	box-shadow: none;
+}
+
+#addressIcon {
+	height: 30px;
+	width: 20px;
+}
+
+.marker-boxes {
+	height: 56px;
+}
+
+.iconButton {
+	float: left;
+	width: 22%;
+	height: 100%;
+}
+
+.iconImage {
+	width: 35px;
+	height: 35px;
+}
+
+#price {
+	width: 50%;
+	left: 45%;
+	height: 26px;
+}
+
+#kitchen {
+	width: 50%;
+}
+
+.icon {
+	display: block;
+	text-indent: -9999px;
+	width: 50px;
+	height: 55px;
+	background-size: 50px 55px;
+}
+
+#sidebar hr {
+	border-top: 1px solid #8c8b8b;
+}
+
+.checkbox {
+	top: .8rem;
+	width: 1.15rem;
+	height: 1.15rem;
+}

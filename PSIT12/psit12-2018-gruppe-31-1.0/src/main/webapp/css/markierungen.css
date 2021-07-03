@@ -1,0 +1,27 @@
+body {
+	background-image: url(img/hungryStudentBackground.jpg);
+	background-repeat: repeat-y;
+    background-size: 100%;
+}
+
+#markerList {
+	min-height: 500px;
+}
+
+.content {
+	background-color: white;
+}
+
+.markerListImage {
+	height: 130px;
+	width: 200px;
+}
+
+
+
+
+
+
+
+
+

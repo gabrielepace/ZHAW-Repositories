@@ -1,0 +1,145 @@
+:source-highlighter: coderay
+:icons: font
+:icon-set: fa
+:sectnums:
+
+= PROG2 Lab Repository
+
+Dieses Repository wird verwendet um die Praktikumsaufgaben in PROG2 auszuteilen
+und abzugeben.
+
+Jedes Praktikum wird in einem eigenen Unterverzeichnis angelegt, in welchem die
+Anleitung und benötigten Dateien enthalten sind:
+
+link:Lab-Tooling/instructions[Lab 1 - Tooling] +
+link:Lab-Testing/instructions[Lab 2 - Testing] +
+link:Lab-Concurrency1/instructions[Lab 3 - Concurrency 1] +
+link:Lab-Concurrency2/instructions[Lab 4 - Concurrency 2] +
+link:Lab-JDBC-FileIO/instructions[Lab 5 - I/O JDBC-File] +
+link:Lab-Networking/instructions[Lab 6 - I/O Networking] +
+
+Wie im ersten Praktikum (Tooling) erläutert, arbeiten Sie mit einem persönlichen
+`fork` dieses Repositories in Ihrer eigenen GitHub Organisation
+(_**mustepet**_/PROG2-lab-ITxxx)  und erledigen die Aufgaben in einem lokalen
+`clone` auf Ihrem Rechner.
+
+Für die nachfolgenden Erläuterungen und die Praktika wird folgende Namensgebung
+für die repositories (remotes) verwendet:
+
+.Repositories
+[options="header, autowidth"]
+|===
+|Name | URL | Verwendung
+
+| upstream
+| \git@github.engineering.zhaw.ch:**PROG2**/PROG2-lab-__ITxxx__.git
+| Das gemeinsame (upstream) Repository Ihrer Klasse
+
+| origin
+| \git@github.engineering.zhaw.ch:__**mustepet**__/PROG2-lab-__ITxxx__.git
+| Ihr persönlicher public fork auf Github
+
+| local
+| ~/__PROG2_WORKDIR__/PROG2-lab-__ITxxx__
+| Ihr lokaler clone im Arbeitsverzeichnis auf dem persönlichen Rechner
+|===
+
+Wobei __mustepet__ für ihren ZHAW Benutzernamen steht, __ITxxx__ für Ihre
+Klassenbezeichnung (z.B. IT16aWIN, IT16bWIN oder IT16aZH) und __PROG2_WORKDIR__
+für ihr PROG2 Arbeitsverzeichnis auf dem lokalen Rechner.
+
+
+== Aktualisieren ihres Repositories
+
+Um ihr eigenes Repository mit neuem Inhalt dieses Klassen-Repositories zu
+aktualisieren verwenden sie den Integration-Manager Workflow:
+
+[source, bash]
+----
+# Wechseln Sie ins Arbeitsverzeichnis Ihres lokalen Clone-Repositories
+cd ~/PROG2_WORKDIR/PROG2-lab-ITxxx
+
+# Wir gehen davon aus, dass bereits ein remote 'origin' eingerichtet ist, das
+# auf Ihr öffentliches Repository auf github verweist. -> evtl. überprüfen mit
+git remote -v
+# und gegebenenfalls hinzufügen
+git remote add origin git@github.engineering.zhaw.ch:mustepet/PROG2-lab-ITxxx
+
+# remote für 'upstream' Klassen-Repository einrichten, falls nicht  vorhanden.
+git remote add upstream git@github.engineering.zhaw.ch:PROG2/PROG2-lab-ITxxx.git
+
+# Aktualisierungen aus Klassen-Repository herunterladen
+git fetch upstream
+
+# in den 'master' Branch des lokalen Clone-Repository wechseln
+git checkout master
+
+# Lokalen master branch aktualisieren, evtl. merge Konflikte beheben
+git merge upstream/master
+
+# Aktualisierungen auf eigenes (Public-)Repository pushen
+git push origin master
+----
+
+== Ausführen des Praktikums und abgeben der Lösungen
+
+=== Branch für Praktikum erzeugen
+Erzeugen Sie für jedes Praktikum einen separaten Branch (z.B. Lab1, Lab2, ...):
+
+[source, bash]
+----
+# aktuellen Hauptbranch (master) auschecken
+git checkout master
+
+# neuen Branch für LabX (Lab1, Lab2, ...) erzeugen und auschecken
+git branch Lab3
+git checkout Lab3
+----
+
+=== Aufgaben lösen und in persönliches Repo committen
+
+Lösen Sie die Aufgaben und commiten Sie regelmässig in den lokalen Lab branch.
+Schreiben Sie die Lösung von Textfragen direkt als Kommentar in den Code oder
+eine Text/PDF Datei Loesung.txt/pdf.
+
+=== Abgeben der Lösung
+
+Zum Abgeben pushen Sie den Lab Branch zuerst zu Ihrem persönlichen Repository
+(origin) auf Github (_**mustepet**_/PROG2-lab-__ITxxx__).
+
+
+Danach senden Sie einen Pull-Request für den *Lab-Branch* Ihres persönlichen public
+repos (_**mustepet**_/PROG2-lab-__ITxxx__:**Lab3**) für Ihren *persönlichen
+Branch* im Klassen-Repository (**PROG2**/PROG2-lab-IT...:**mustepet**).
+
+[WARNING]
+Pull-Request in den 'master' Branch des Klassen-Repositories (upstream) werden
+grundsätzlich abgelehnt.
+
+[NOTE]
+Weitere commits in den Lab-Branch nach dem Erstellen des Pull-Requests werden
+automatisch zum Pull-Request hinzugefügt, solange dieser noch nicht vom
+Maintainer akzeptiert wurde.
+
+Besprechen Sie anschliessend die Lösung mit dem Praktikumsbetreuer.
+
+Nach Abschluss des Praktikums und Besprechung können sie den Lab-Branch auch zum 
+ihrem master branch mergen und optional den Lab3 branch entfernen.
+
+[source, bash]
+----
+
+# Mergen des Lab-Branch nach master
+# In diesem Fall verwenden wir sogar 'squash' um alle commits des Branches
+# in einen einzelnen commit zu comprimieren. Nur ein commit für die finale
+# Version des Praktikums
+git checkout master
+git merge --squash Lab3
+git push origin master
+
+# Da alle info jetzt in den master branch gemerged wurden, können sie optional 
+# den Lab branch löschen (remote und remote)
+git push --delete origin Lab3 # auf remote origin entfernen
+git branch -d Lab3            # im lokalen repository entfernen
+
+----

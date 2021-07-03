@@ -1,0 +1,16 @@
+<b-navbar variant="light" class="ml-auto ml-md-0">
+    <b-container fluid>
+        <b-navbar-brand href="#">
+            <img :src="logo"/>
+        </b-navbar-brand>
+
+        <b-navbar-nav class="ml-auto" v-if="showMenu">
+            <b-nav-item-dropdown size="lg" variant="link" toggle-class="text-decoration-none" no-caret right>
+                <template slot="button-content"><img :src="user" class="user-img"/></template>
+                <!--<b-dropdown-item href="#">Profil</b-dropdown-item>-->
+                <!--<b-dropdown-item href="#">Einstellungen</b-dropdown-item>-->
+                <b-dropdown-item @click="onLogout">Logout</b-dropdown-item>
+            </b-nav-item-dropdown>
+        </b-navbar-nav>
+    </b-container>
+</b-navbar>

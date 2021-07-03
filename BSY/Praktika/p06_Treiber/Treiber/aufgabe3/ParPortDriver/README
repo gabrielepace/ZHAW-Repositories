@@ -1,0 +1,7 @@
+Note:
+
+the makefile provides "make install" and "make uninstall" which not
+only inserts the module into the kernel, but also sets up the required
+device file in /dev.
+
+

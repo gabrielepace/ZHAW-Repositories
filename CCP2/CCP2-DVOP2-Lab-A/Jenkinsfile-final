@@ -1,0 +1,145 @@
+
+pipeline {
+  agent any
+
+  stages {
+    stage('Build') {
+      steps {
+        echo 'Building..'
+        sh './gradlew assemble'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        echo 'Testing..'
+        sh './gradlew test'
+      }
+    }
+
+    stage('Archive artifacts') {
+      steps {
+        echo "GIT_COMMIT is ${env.GIT_COMMIT}"
+        echo "GIT_BRANCH is ${env.GIT_BRANCH}"
+
+        sh 'tar cvf artifacts.tar build/libs manifest*yml'
+        sh 'gzip artifacts.tar'
+
+        script {
+          def server = Artifactory.server 'ccp2-artifactory'
+          def buildInfo = Artifactory.newBuildInfo()
+          buildInfo.env.capture = true
+
+          def build = "build-${env.GIT_BRANCH}-${env.GIT_COMMIT}"
+
+          def uploadSpec = """{
+            "files": [{
+              "pattern": "artifacts.tar.gz",
+              "target":  "libs-snapshot/${build}.tar.gz"
+            }]
+          }"""
+
+          server.upload(uploadSpec, buildInfo)
+          server.publishBuildInfo(buildInfo)
+        }
+      }
+
+      post {
+        always {
+          cleanWs()
+        }
+      }
+    }
+
+    stage('Deploy development branch') {
+      when {
+        branch 'development'
+      }
+      steps {
+        echo 'Deploying development branch....'
+
+        echo "GIT_COMMIT is ${env.GIT_COMMIT}"
+        echo "GIT_BRANCH is ${env.GIT_BRANCH}"
+
+        script {
+          def server = Artifactory.server 'ccp2-artifactory'
+
+          def build = "build-${env.GIT_BRANCH}-${env.GIT_COMMIT}"
+
+          def downloadSpec = """{
+            "files": [{
+              "pattern": "libs-snapshot/${build}.tar.gz",
+              "target":  "artifacts.tar.gz"
+            }]
+          }"""
+
+          server.download(downloadSpec)
+        }
+
+        sh 'tar xvzf artifacts.tar.gz'
+
+        pushToCloudFoundry(
+            organization: 'ZHAW@Dominic/April2019',
+            cloudSpace: 'test-mach',
+            target: 'https://api.lyra-836.appcloud.swisscom.com',
+            credentialsId: 'swisscom-developer-portal',
+            manifestChoice: [manifestFile: 'manifest.yml']
+        )
+      }
+    }
+
+
+    stage('Deploy production branch') {
+      when {
+        branch 'master'
+      }
+
+
+      steps {
+        input message:'Approve deployment to production?'
+
+        echo 'Deploying development branch....'
+
+        echo "GIT_COMMIT is ${env.GIT_COMMIT}"
+        echo "GIT_BRANCH is ${env.GIT_BRANCH}"
+
+        script {
+          def server = Artifactory.server 'ccp2-artifactory'
+
+          def build = "build-${env.GIT_BRANCH}-${env.GIT_COMMIT}"
+
+          def downloadSpec = """{
+            "files": [{
+              "pattern": "libs-snapshot/${build}.tar.gz",
+              "target":  "artifacts.tar.gz"
+            }]
+          }"""
+
+          server.download(downloadSpec)
+        }
+
+        sh 'tar xvzf artifacts.tar.gz'
+
+        pushToCloudFoundry(
+            organization: 'ZHAW@Dominic/April2019',
+            cloudSpace: 'test-mach',
+            target: 'https://api.lyra-836.appcloud.swisscom.com',
+            credentialsId: 'swisscom-developer-portal',
+            manifestChoice: [manifestFile: 'manifest.yml']
+        )
+      }
+    }
+  }
+
+  post {
+    success {
+      echo "Pipeline successfull: ${currentBuild.fullDisplayName}"
+    }
+    failure {
+      mail to: 'mach@zhaw.ch',
+                subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+                body: "Something is wrong with ${env.BUILD_URL}"
+    }
+  }
+
+}

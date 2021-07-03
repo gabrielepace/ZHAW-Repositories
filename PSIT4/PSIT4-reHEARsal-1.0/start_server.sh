@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source bin/activate
+./manage.py makemigrations
+./manage.py migrate
+./manage.py runserver

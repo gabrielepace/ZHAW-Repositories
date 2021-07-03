@@ -1,0 +1,67 @@
+<create-project class="col-12 col-md-6 col-xl-12 mt-3 mt-md-0 mt-xl-3">
+  <div class="card">
+    <div class="card-header">
+      Neues Projekt erfassen
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control { state.error ? 'is-invalid' : '' }" id="inputProject" name="project" placeholder="Projekt schreiben" onkeyup={ onChange } value={ state.title }>
+          <div if={ state.error } class="invalid-feedback">{ state.error }</div>
+        </div>
+        <button type="submit" class="btn btn-primary" onclick={ onSubmit }>
+          <i class="fas fa-plus mr-2"></i>
+          Erfassen
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    export default {
+      onBeforeMount() {
+        this.state = {
+          title: '',
+          error: null,
+        };
+      },
+      validate() {
+        if (!this.state.title || this.state.title.trim().length === 0) {
+          this.update({
+            error: 'Titel ist erforderlich',
+          });
+
+          return false;
+        }
+
+        if (this.state.error) {
+          this.update({
+            error: null,
+          });
+        }
+
+        return true;
+      },
+      onChange(e) {
+        this.update({
+          title: e.target.value,
+        });
+
+        this.validate();
+      },
+      async onSubmit(e) {
+        e.preventDefault();
+
+        if (this.validate()) {
+          const errors = await this.props.addProject(this.state.title);
+
+          if (errors && errors.title) {
+            this.update({ error: errors.title });
+          } else {
+            this.update({ title: '' });
+          }
+        }
+      },
+    };
+  </script>
+</create-project>

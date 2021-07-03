@@ -1,0 +1,26 @@
+.semester {
+    margin: 15px;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.semester > table {
+    margin-bottom: 0;
+}
+
+.semester .icon {
+    width: 20px;
+    padding: 0 3px;
+    opacity: 0.5;
+    border: none;
+    background: transparent;
+    box-shadow: none !important;
+}
+
+.semester .icon img {
+    vertical-align: unset;
+}
+
+.semester .icon:hover {
+    opacity: 1;
+}

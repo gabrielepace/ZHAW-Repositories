@@ -1,0 +1,8 @@
+<div>
+    <b-alert v-if="countdown" :show="dismissCountDown" dismissible :variant="state"
+             @dismissed="dismissCountDown=0" @dismiss-count-down="countDownChanged">
+        <p>{{message}}</p>
+        <b-progress :variant="state" :max="dismissSecs" :value="dismissCountDown" height="4px"></b-progress>
+    </b-alert>
+    <b-alert v-else show dismissible :variant="state">{{message}}</b-alert>
+</div>

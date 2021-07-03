@@ -1,0 +1,17 @@
+{
+  "name": "sockets_p5",
+  "version": "1.0.0",
+  "description": "tictactoe_server",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "ayy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.4",
+    "socket.io": "^1.7.4",
+    "websocket": "^1.0.32"
+  }
+}

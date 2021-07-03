@@ -1,0 +1,145 @@
+:source-highlighter: coderay
+:icons: font
+:icon-set: fa
+
+= Praktikum Testing
+
+== Unit-Testing & Exceptions
+
+Die Fläche eines Dreiecks mit den Seitenlängen `a`, `b`, `c` kann mit
+folgender Formel berechnet werden: +
+`flaeche = Math.sqrt(s * (s - a) * (s - b) * (s - c));` +
+wobei `s = (a + b + c)/2` ist.
+
+=== Aufgaben:
+[loweralpha]
+.  Schreiben Sie eine Methode, welche die Fläche eines Dreiecks aus den
+Seiten `a`, `b`, `c` (verwenden Sie den Typ double) berechnet. Die Methode
+soll eine `IllegalArgumentException` werfen, falls ungültige Werte übergeben
+werden oder die drei Seiten kein Dreieck darstellen.
+Überlegen Sie sich, welche Bedingungen erfüllt sein müssen, damit es sich um ein
+Dreieck handelt.
+
+. Testen Sie Ihre Methode mit Hilfe von Unit-Tests. Welche Fälle müssen getestet
+werden? (Vergessen Sie nicht die Grenzfälle).
+
+.  Erstellen Sie eine eigene _checked_ Exception `NotATriangleException`,
+die geworfen wird wenn die Angaben kein gültiges Dreieck ergeben.
+Was muss alles angepasst werden? Ist das Verhalten Ihrer _checked_ Exception
+anders als bei der originalen _unchecked_ Variante?
+
+[TIP]
+.Testen von Exceptions
+====
+Das Werfen von Exceptions können Sie in JUnit 4.x mit folgender Annotation testen:
+[source, Java]
+----
+@Test(expected=IndexOutOfBoundsException.class)
+public void testIndexOutOfBoundsException() throws Exception { ... }
+----
+
+Alternativ kann die Exception auch in einem eigenen try-catch block behandelt werden:
+
+[source, Java]
+----
+try {
+    Triangle.calcArea(1.0, -1.0, 1.0);
+    fail("Missing IllegalArgumentException Neg value b");
+} catch (IllegalArgumentException e) {
+    assertEquals("All sides have to be longer than 0", e.getMessage());
+}
+----
+====
+
+== Mock-Testing
+
+Im Praktikumsverzeichnis finden Sie das Projekt `mock-testing`. Es handelt sich
+um eine sehr einfache Implementation einer virtuellen JukeBox die Songs abspielen
+kann. Dieses Projekt haben Sie bereits in PROG1 kennengelernt. +
+In diesem Praktikum soll an Stelle eines Stub-Objekt ein Mock-Objekt verwendet werden.
+
+Es gibt bereits eine Klasse `MusicJukeBoxTest`, welche die `MusicJukeBox` testet.
+Studieren Sie diese Testklasse.
+
+image:images/jukebox-class-diagramm.png[pdfwidth=75%, width=600px]
+
+In der Testklasse sind die folgenden vier Tests umgesetzt:
+
+. `testPlayOfNonexistingSong` versucht einen Song zu spielen, den es
+nicht gibt. Es wird eine Exception von der JukeBox erwartet.
+
+. `testGetPlayList` fügt einen Song der JukeBox hinzu und testet dann ob
+die Playlist nicht leer ist.
+
+. `testPlay` fügt einen Song der JukeBox hinzu und spielt diesen ab.
+Zudem wird der aktuelle Song geholt und überprüft, ob er existiert und ob
+er gerade abgespielt wird.
+
+. `testPlayOfAlreadyPlayingSong` fügt einen Song der JukeBox hinzu und
+startet diesen zweimal unmittelbar hintereinander. Beim zweiten Start
+wird eine Exception vom Song erwartet.
+
+Stubs sind nicht sehr intelligent und daher kann man häufig nur oberflächlich
+mit Stubs testen. +
+
+[IMPORTANT]
+In den nachfolgenden Aufgaben sollen Sie in den obigen Test das Song-Stub-Objekt
+durch ein Song-Mock-Objekt ersetzen und die Tests dadurch flexibler gestalten.
+
+Als erstes sollte die Abhängigkeit zu Mockito (z.B. Version 2.2.3) ins
+Maven-Projekt eingebunden werden. Infos dazu finden Sie auf der Mockito
+Projekt-Homepage (http://mockito.org).
+
+Studieren Sie bei dieser Gelegenheit auch gerade die Mockito-Dokumentation.
+Diese finden Sie unter http://mockito.github.io/mockito/docs/current/org/mockito/Mockito.html.
+
+=== 1. Aufgabe:
+[loweralpha]
+.  Refactorieren Sie die Test-Methode `testPlayOfNonexistingSong` so,
+dass diese ohne das try-catch Konstrukt auskommt.
+
+.  Die Test-Methode `testGetPlayList` soll so abgeändert werden, dass der Song
+als Mock Objekt verwendet wird. Testen Sie zusätzlich das Verhalten, wenn mehrere
+Songs hinzugefügt werden. Prüfen Sie, ob die Funktion `getTitle` aufgerufen wurde.
+Wie oft wurde diese aufgerufen?
+
+.  Implementieren Sie den Test `testPlayOfAlreadyPlayingSong` mit Hilfe eines
+Song Mock-Objektes. Verwenden Sie `doThrow`, um eine Exception zu simulieren.
+
+.  Implementieren Sie eine neue Test-Methode `testPlayMock`, in welcher Sie ein
+Song Mock-Objekt erzeugen und mit diesem testen, ob die erwarteten Aufrufe auch
+tatsächlich stattfinden. Prüfen Sie auch die Reihenfolge der Aufrufe. Verwenden
+Sie dazu die `InOrder` Funktionalität.
+
+=== 2. Aufgabe
+[loweralpha]
+.  In der Vorlesung haben Sie die Callback Mock-Funktionalität kennengelernt.
+Entwerfen Sie ein Beispiel, indem Sie diese Funktionalität anwenden:
+[source, Java]
+when(mock.function()).thenAnswer(<callbackFunction>);
+
+.  Mock’s und Spy’s können durch Annotationen initialisiert werden.
+Mocken Sie die `LinkedList` Klasse aus der Java Bibliothek als Spy und Mock mit
+Annotationen. Zeigen Sie den Unterschied zwischen Spy’s und Mock’s.
+
+.  Argument Matcher können eingesetzt werden, um einen beliebigen Parameter zu
+Mocken. Schreiben Sie einen Test und erklären Sie, was der Vorteil davon ist.
+
+=== 3. Aufgabe
+[loweralpha]
+.  Testing kann in zwei unterschiedliche Strategien aufgeteilt werden.
+Zum einen gibt es White-Box Testing und zum zweiten Black-Box Testing.
+Was für Java Libraries gibt es, um diese zwei Strategien zu testen? Wann
+wenden Sie welche Strategie an?
+
+.  Harmcrest bietet eine Vielzahl von Matcher-Funktionen an. Studieren
+Sie das Harmcrest Tutorial und erstellen Sie einen Test, in welchem Sie
+Harmcrest Matcher-Funktionen verwenden. Das Tutorial finden Sie unter:
+https://code.google.com/p/hamcrest/wiki/Tutorial
+
+.  Suchen Sie im Internet nach zwei weiteren Testing-Frameworks. Für
+welche Zwecke würden Sie diese einsetzen?
+
+. Das Erstellen von guten automatisierten Unit-Tests kann manchmal schwierig
+umzusetzen sein. Was ist der Hauptgrund dafür? Wie können Sie dieses Problem
+entschärfen?

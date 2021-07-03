@@ -1,0 +1,104 @@
+
+pipeline {
+  agent any
+
+  stages {
+    stage('Build') {
+      steps {
+        echo 'Building..'
+        sh './gradlew assemble'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        echo 'Testing..'
+        sh './gradlew test'
+      }
+    }
+
+    stage('Archive artifacts') {
+      steps {
+        echo "Archiving artifacts for ${env.GIT_BRANCH} branch (${env.GIT_COMMIT}) ..."
+
+        sh 'tar cvf artifacts.tar build/libs manifest*yml scripts'
+        sh 'gzip artifacts.tar'
+
+        script {
+          def server = Artifactory.server 'ccp2-artifactory'
+          def buildInfo = Artifactory.newBuildInfo()
+          buildInfo.env.capture = true
+
+          def build = "build-${env.GIT_BRANCH}-${env.GIT_COMMIT}"
+
+          def uploadSpec = """{
+            "files": [{
+              "pattern": "artifacts.tar.gz",
+              "target":  "libs-snapshot/${build}.tar.gz"
+            }]
+          }"""
+
+          server.upload(uploadSpec, buildInfo)
+          server.publishBuildInfo(buildInfo)
+        }
+      }
+
+      post {
+        always {
+          cleanWs()
+        }
+      }
+    }
+
+    stage('Blue-Green deploy using shell script') {
+      environment {
+        CF_API = 'https://api.cf.cloudlab.zhaw.ch'
+        CF_ORG = 'CCP2-FS2021'
+        CF_SPACE = 'stud-pacegab1'
+        CF_CRED = credentials('cloudlab-zhaw')
+      }
+      steps {
+        echo "Deploying ${env.GIT_BRANCH} branch (${env.GIT_COMMIT}) ..."
+        // echo "CRED = ${env.CF_CRED_USR} – ${env.CF_CRED_PSW}"
+
+        script {
+          def server = Artifactory.server 'ccp2-artifactory'
+
+          def build = "build-${env.GIT_BRANCH}-${env.GIT_COMMIT}"
+
+          def downloadSpec = """{
+            "files": [{
+              "pattern": "libs-snapshot/${build}.tar.gz",
+              "target":  "artifacts.tar.gz"
+            }]
+          }"""
+
+          server.download(downloadSpec)
+        }
+
+        sh 'tar xvzf artifacts.tar.gz'
+
+        // Deploy new app in parallel to old app
+        sh 'scripts/1-deploy-new.sh manifest.yml'
+
+        // Verify that the new app is responding
+        sh 'scripts/2-verify-new.sh manifest.yml'
+
+        // Wait for confirmation (check new app manually)
+        input message:'New app deployed and verifyied'
+
+        // Switch the URL to the new app
+        sh 'scripts/3-switch-to-new.sh manifest.yml'
+
+        // Wait for confirmation (check new app is available)
+        input message:'Switched to new app'
+
+        // Cleanup for next deployment
+        sh 'scripts/4-cleanup.sh manifest.yml'
+
+        echo 'Deployment completed'
+      }
+    }
+  }
+
+}

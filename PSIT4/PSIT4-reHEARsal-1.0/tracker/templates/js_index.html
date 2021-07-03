@@ -1,0 +1,16 @@
+<html>
+  <head> </head>
+  <body>
+    <a href="/admin" >admin</a>
+    {% if tracks %}
+    <a href="/tracks" >tracks</a>
+    <ul>
+    {% for t in tracks %}
+      <li><a href="/tracks/{{t.id}}" >{{t.name}}</a></li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    No tracks found.
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: gabrielepace
+      changes:
+        - insert:
+            tableName: customer
+            columns:
+              - column:
+                  name: firstname
+                  value: Maria
+              - column:
+                  name: lastname
+                  value: Bernasconi
+
+  - changeSet:
+      id: 4
+      author: gabrielepace
+      changes:
+        - insert:
+            tableName: checkout
+            columns:
+              - column:
+                  name: customer_id
+                  value: 1
+
+  - changeSet:
+      id: 5
+      author: gabrielepace
+      changes:
+        - insert:
+            tableName: checkout
+            columns:
+              - column:
+                  name: customer_id
+                  value: 2

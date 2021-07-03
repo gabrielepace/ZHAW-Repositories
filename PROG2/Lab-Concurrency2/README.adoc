@@ -1,0 +1,11 @@
+:source-highlighter: coderay
+:icons: font
+:icon-set: fa
+
+= PROG2 – Praktikum Concurrency 2
+
+== Verzeichnisstruktur
+
+[horizontal]
+link:instructions[]:: Praktikumsanleitung
+link:handout[]::      Handout für Studierende

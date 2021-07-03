@@ -1,0 +1,27 @@
+version: "2"
+services:
+  jenkins:
+    build:
+      context: .
+    environment:
+      CF_API_URL: "${CF_API_URL}"
+      CF_ORGANIZATION: "${CF_ORGANIZATION}"
+      CF_SPACE: "${CF_SPACE}"
+    ports:
+      - "50000:50000"
+      - "8080:8080"
+    volumes:
+      # The /var/jenkins_* paths might not work for Docker machine...
+      - jenkins_home:/var/jenkins_home
+      - jenkins_root:/root/
+    links:
+      - artifactory
+  artifactory:
+    build:
+      context: .
+      dockerfile: Dockerfile-artifactory
+    ports:
+      - "8081:8081"
+volumes:
+  jenkins_home:
+  jenkins_root:

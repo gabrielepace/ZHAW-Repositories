@@ -1,0 +1,32 @@
+<div class="semester">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th colspan="3">{{ix}}. Semester</th>
+            <th colspan="2" align="right" :class="$insufficientMark(avg)">&#216; {{avg | formatMark}}</th>
+        </tr>
+        </thead>
+        <thead>
+        <tr>
+            <th>Modul</th>
+            <th>ECTS</th>
+            <th>Note</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(item, i) in enrollments.values()" v-bind:key="i">
+            <td>{{item.name}}</td>
+            <td>{{item.ects}}</td>
+            <td :class="$insufficientMark(item.avg)">{{item.avg | formatMark}}</td>
+            <td>
+                <b-button v-b-modal.create-modal @click="editModule(item)" class="icon" variant="light"><img :src="pencil"/></b-button>
+            </td>
+            <td>
+                <b-button @click="onDelete(item)" class="icon" variant="light"><img :src="trash"/></b-button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,61 @@
+.App {
+    padding: 20px;
+}
+
+.game {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+h1 {
+    margin-top: 0;
+    flex-basis: 100%;
+}
+
+ol {
+    list-style: none;
+    padding: 0 10px;
+    margin: 5px 0;
+}
+
+.status {
+    padding: 5px;
+    margin: 0 10px;
+    font-weight: bold;
+    line-height: 34px;
+    outline: solid 1px black;
+}
+
+.status img {
+    position: relative;
+    top: -2px;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.square {
+    background: #fff;
+    border: 1px solid #999;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 34px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 34px;
+}
+
+.square:focus {
+    outline: none;
+}
+
+.board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+}

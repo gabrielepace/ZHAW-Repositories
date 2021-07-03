@@ -1,0 +1,10 @@
+.\build\action_handler.o: app\action_handler.c
+.\build\action_handler.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\build\action_handler.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\build\action_handler.o: C:\Users\ryan\AppData\Local\Arm\Packs\InES\CTBoard14_DFP\4.0.2\Device\Include\reg_stm32f4xx.h
+.\build\action_handler.o: app\action_handler.h
+.\build\action_handler.o: app\event_handler.h
+.\build\action_handler.o: C:\Users\ryan\AppData\Local\Arm\Packs\InES\CTBoard14_DFP\4.0.2\Device\Include\reg_ctboard.h
+.\build\action_handler.o: C:\Users\ryan\AppData\Local\Arm\Packs\InES\CTBoard14_DFP\4.0.2\HAL\Include\hal_timer.h
+.\build\action_handler.o: C:\Users\ryan\AppData\Local\Arm\Packs\InES\CTBoard14_DFP\4.0.2\HAL\Include\hal_common.h
+.\build\action_handler.o: C:\Users\ryan\AppData\Local\Arm\Packs\InES\CTBoard14_DFP\4.0.2\HAL\Include\hal_ct_lcd.h

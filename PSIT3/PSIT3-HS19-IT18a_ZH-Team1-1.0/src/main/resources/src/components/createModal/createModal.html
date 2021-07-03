@@ -1,0 +1,86 @@
+<b-modal id="create-modal" :title="`${title}`" @shown="onModalOpen" @hide="onModalClose" hide-footer>
+    <form ref="form">
+        <!---------- Name ---------->
+        <b-row>
+            <b-col sm="4"><label for="name">Name:</label></b-col>
+            <b-col sm="8">
+                <b-form-input id="name" type="text" v-model="enrollment.name"
+                              @blur="$v.enrollment.name.$touch()"
+                              :class="{ 'is-invalid': $v.enrollment.name.$error}"></b-form-input>
+                <b-form-invalid-feedback>
+                    Bitte einen Modulnamen eingeben.
+                </b-form-invalid-feedback>
+            </b-col>
+        </b-row>
+        <!---------- Semester ---------->
+        <b-row>
+            <b-col sm="4"><label for="semester">Semester:</label></b-col>
+            <b-col sm="8">
+                <b-form-input id="semester" type="number" v-model="enrollment.semester"
+                              @blur="$v.enrollment.semester.$touch()"
+                              :class="{ 'is-invalid': $v.enrollment.semester.$error}"></b-form-input>
+                <b-form-invalid-feedback>
+                    Bitte Semester eingeben.
+                </b-form-invalid-feedback>
+            </b-col>
+        </b-row>
+        <!---------- Modulguppe ---------->
+        <b-row>
+            <b-col sm="4"><label for="name">Modulgruppe:</label></b-col>
+            <b-col sm="8">
+                <b-form-input id="name" type="text" v-model="enrollment.moduleGroupName"
+                              @blur="$v.enrollment.moduleGroupName.$touch()"
+                              :class="{ 'is-invalid': $v.enrollment.moduleGroupName.$error}"></b-form-input>
+                <b-form-invalid-feedback>
+                    Bitte Modulgruppe eingeben.
+                </b-form-invalid-feedback>
+            </b-col>
+        </b-row>
+        <!---------- ECTS ---------->
+        <b-row>
+            <b-col sm="4"><label for="ects">ECTS:</label></b-col>
+            <b-col sm="8">
+                <b-form-input id="ects" type="number" v-model="enrollment.ects"
+                              @blur="$v.enrollment.ects.$touch()"
+                              :class="{ 'is-invalid': $v.enrollment.ects.$error}"></b-form-input>
+                <b-form-invalid-feedback>
+                    Bitte Anzahl ECTS eingeben.
+                </b-form-invalid-feedback>
+            </b-col>
+        </b-row>
+        <!---------- dispensiert ---------->
+        <b-row>
+            <b-col sm="4"><label for="dispensed">dispensiert:</label></b-col>
+            <b-col sm="8">
+                <b-form-checkbox id="dispensed" v-model="enrollment.dispensed"></b-form-checkbox>
+            </b-col>
+        </b-row>
+        <div v-if="!enrollment.dispensed" class="marks-section">
+            <!---------- marks ---------->
+            <b-row v-for="(markObj, i) in this.enrollment.marks" v-bind:key="i">
+                <b-col sm="4"><label for="mark">Note:</label></b-col>
+                <b-col sm="2">
+                    <b-form-input id="mark" type="number" v-model="markObj.mark" min="1" max="6" step="0.01"></b-form-input>
+                </b-col>
+                <b-col sm="3"><label for="mark">Gewichtung:</label></b-col>
+                <b-col sm="3">
+                    <b-form-input id="weighting" type="number" v-model="markObj.weighting" min="0" max="100" step="1"></b-form-input>
+                </b-col>
+            </b-row>
+            <!---------- add mark ---------->
+            <b-row>
+                <b-col sm="4"><label for="addMark">Note hinzufügen</label></b-col>
+                <b-col sm="8">
+                    <b-button id="addMark" type="button" class="btn btn-secondary add-mark" @click="addMark">+</b-button>
+                </b-col>
+            </b-row>
+        </div>
+
+        <b-row>
+            <b-col sm="12">
+                <b-btn id="save-module" variant="primary" @click="saveModule" :disabled="$v.enrollment.$invalid">Speichern</b-btn>
+                <b-btn @click="$bvModal.hide('create-modal')">Abbrechen</b-btn>
+            </b-col>
+        </b-row>
+    </form>
+</b-modal>

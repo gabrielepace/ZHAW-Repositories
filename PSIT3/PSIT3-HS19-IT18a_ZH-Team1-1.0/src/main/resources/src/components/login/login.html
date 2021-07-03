@@ -1,0 +1,19 @@
+<div>
+    <b-card title="Log-in" class="login-form">
+        <MessageBox v-if="message.text !== ''" :message="message.text" :state="message.state"></MessageBox>
+
+        <b-form @submit.stop.prevent="onLogin">
+            <b-form-group label="E-Mail" label-for="mail" inline>
+                <b-form-input id="mail" name="mail" v-model="$v.form.mail.$model" type="text"
+                              :state="$v.form.mail.$dirty ? !$v.form.mail.$error : null"></b-form-input>
+            </b-form-group>
+            <b-form-group label="Passwort" label-for="password">
+                <b-form-input id="password" name="password" v-model="$v.form.password.$model" type="password"
+                              :state="$v.form.password.$dirty ? !$v.form.password.$error : null"></b-form-input>
+            </b-form-group>
+
+            <b-button type="submit" variant="primary" :disabled="$v.form.$invalid">Anmelden</b-button>
+            <b-button @click="onRegister" variant="secondary">Registrieren</b-button>
+        </b-form>
+    </b-card>
+</div>

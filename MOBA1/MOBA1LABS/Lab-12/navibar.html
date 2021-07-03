@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Progress Bar Demo</title>
+
+  <script src="navibar.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <navigation-bar>
+    <slot>
+      <a href="">
+        <img src="imgs/coffee.png">
+      </a>
+    </slot>
+    <slot>
+      <a href="">
+        <img src="imgs/home.png">
+      </a>
+    </slot>
+    <slot>
+      <a href="">
+        <img src="imgs/settings.png">
+      </a>
+    </slot>
+    <slot>
+      <a href="">
+        <img src="imgs/map.png">
+      </a>
+    </slot>
+
+  </navigation-bar>
+
+</body>
+
+</html>

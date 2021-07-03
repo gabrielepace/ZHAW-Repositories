@@ -1,0 +1,19 @@
+/**
+ * @mainpage PROGC - Labs
+ *
+ * @section Purpose
+ *
+ * This is a PROGC lab <B>Calculator</B> source documentation.
+ *
+ * @section Assignment
+ *
+ * This lab is provided to define and use a lookup table (function pointers, etc.).
+ * 
+ * Run the lab by:
+ *
+ * @code
+ * make clean; make; make doc; make test
+ * @endcode
+ *
+ * The executable program is located in the bin folder.
+ */

@@ -1,0 +1,25 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# do not trim trailing whitespace in markdown files
+[*.md]
+trim_trailing_whitespace = false
+
+# 4 space indentation
+[*.java]
+indent_size = 4
+indent_style = space
+
+# 2 space indentation
+[*.{xml,ddl,sql}]
+indent_style = space
+indent_size = 2

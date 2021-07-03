@@ -1,0 +1,5 @@
+API Key from AlphaVantage:
+
+Organization: ZHAW - Zurich University of Applied Sciences
+Email: pacegab1@students.zhaw.ch
+API key is: HIAM8SZJ84C9VPXQ

@@ -1,0 +1,23 @@
+/* Temporary map background */
+body {
+	background-image: url(img/tempMap.png);
+	background-repeat: repeat-y;
+    background-size: 100%;
+}
+
+#markerList {
+	min-height: 500px;
+}
+
+.content {
+	background-color: white;
+}
+
+
+
+
+
+
+
+
+

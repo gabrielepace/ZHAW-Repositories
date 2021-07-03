@@ -1,0 +1,16 @@
+<div>
+    <table class="table modulegroup">
+        <thead>
+        <tr>
+            <th>Modulgruppe</th>
+            <th>&#216;</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(item, i) in modulegroups" v-bind:key="i">
+            <td>{{item.name}}</td>
+            <td :class="$insufficientMark(item.avg)">{{item.avg | formatMark }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

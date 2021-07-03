@@ -1,0 +1,53 @@
+Simple Parallel Port Emulation
+==============================
+M. Thaler, InIT/ZHAW, 2/2008
+
+How to install the paralell port emulator?
+
+1. Installation
+---------------
+
+a) su to root in directory "ParPortEmul"
+b) type "make install"
+   - the module is compiled (major nr. 126)
+   - 3 device files are set up:
+		- /dev/ParPortEmu_lp0, major 126, minor 0
+		- /dev/ParPortEmu_lp1, major 126, minor 1
+		- /dev/ParPortEmu_lp2, major 126, minor 2
+   - access rights are set to 0766
+   - the module is loaded
+   - the directory is cleaned (not everything, but a lot)
+c) leave root 
+
+
+2. Deinstallation
+-----------------
+
+a) su to root in directory "ParPortEmul"
+b) type "make uninstall"
+   - the module is unloaded
+   - the /dev/ParPortEmu_lp0 ..  /dev/ParPortEmu_lp2 are removed
+
+
+5. Testing
+----------
+
+5.1 Module tester
+-----------------
+
+Compile the file "testParPortEmul.c" in the tests/parPortEmulatorTest directory.
+Load the ParPortEmul modul and run testParPortEmul.e to check if the modul works
+correctly.
+
+5.2 Traffic light application
+-----------------------------
+
+To test your driver and traffic light controler, we provide a simulated 
+traffic light that connects itself to the virtual lp1 (or COM1) port. If 
+you have installed the PartPortEmul module, you can now start the traffic 
+light simulator:
+
+	java -jar ampel.jar
+
+
+Have fun!

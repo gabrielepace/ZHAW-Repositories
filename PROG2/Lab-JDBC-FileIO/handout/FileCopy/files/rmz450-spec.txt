@@ -1,0 +1,30 @@
+ENGINE  
+Engine  449cc, 4-stroke, liquid-cooled, single cylinder, DOHC
+Bore Stroke 96.0 x 62.1 mm (3.78 x 2.4 in)
+Compression Ratio   12.5:1
+Fuel System Fuel Injection
+Starter Primary kick
+Lubrication Semi-dry sump
+DRIVE TRAIN 
+Transmission    5-speed constant mesh
+Clutch  Wet multi-plate type, manual release
+Final Drive Chain, DID520MXV4, 114 links
+CHASSIS 
+Suspension Front    Inverted telescopic, air spring, oil damped
+Suspension Rear Link type, coil spring, oil damped
+Brakes Front    Disc brake, single rotor
+Brakes Rear Disc brake, single rotor
+Tires Front 80/100-21 51M, tube type
+Tires Rear  110/90-19 62M, tube type
+Fuel Tank Capacity  6.2 L (1.6 US gallons)
+Color   Champion Yellow No.2 / Solid Black
+ELECTRICAL  
+Ignition    Electronic Ignition (CDI)
+DIMENSIONS  
+Overall Length  2190 mm (86.2 in)
+Overall Width   830 mm (32.7 in)
+Overall Height  1270 mm (50.0 in)
+Wheelbase   1495 mm (58.9 in)
+Ground Clearance    325 mm (12.8 in)
+Seat Height 955 mm (37.6 in)
+Curb Weight 112 kg (247 lbs)

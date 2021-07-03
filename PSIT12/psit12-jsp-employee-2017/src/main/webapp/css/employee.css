@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.logout {
+    background-color: #f1f1f1;
+    color: black;
+    border-radius: 15px;
+    box-shadow: 1px 3px #999;
+    float: right;
+    margin: 40px 70px 30px 30px;
+}
+
+#logout {
+    
+}

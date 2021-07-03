@@ -1,0 +1,18 @@
+main {
+    padding: 10px 0;
+    min-height: 50vh;
+}
+
+.float-children > div {
+    float: left;
+}
+
+.no-modules .alert {
+    color: rgba(0, 0, 0, 0.7);
+    margin-top: 10px;
+    background-color: #f8f9fa;
+}
+
+.insuffisient-mark {
+    color: #F00;
+}

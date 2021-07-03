@@ -1,0 +1,41 @@
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 50%;
+}
+
+.child {
+  min-width: 9em;
+  min-height: 10em;
+  border: 1px solid black;
+  flex: 1;
+
+}
+
+.red-child {
+  background-color: red;
+  border-radius: 50%;
+}
+.blue-child {
+  background-color: blue;
+  border-radius: 50%;
+}
+
+
+@media screen and (min-width: 60em) {
+  .board { 
+    width: 49vw; 
+  }
+
+  .board .field {
+    width: 7vw;
+    height: 7vw;
+  }
+
+  .board .field .piece {
+    width: 5vw;
+    height: 5vw;
+    margin: 1vw;
+  }
+}
+

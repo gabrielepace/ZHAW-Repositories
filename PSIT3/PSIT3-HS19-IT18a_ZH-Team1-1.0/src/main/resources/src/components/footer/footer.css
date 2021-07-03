@@ -1,0 +1,25 @@
+.footer-distributed {
+    color: #fff;
+    width: 100%;
+    font: 14px sans-serif;
+    box-sizing: border-box;
+    padding: 30px 30px 15px 30px !important;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-right {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer-distributed .emphasise {
+    display: block;
+    font: bold 16px sans-serif;
+}
+
+.footer-distributed .icon {
+    width: 13px;
+    margin-top: -2px;
+    margin-bottom: 2px;
+}

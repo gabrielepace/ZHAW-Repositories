@@ -1,0 +1,19 @@
+body {
+    background-image: url(img/hungryStudentBackground.jpg);
+    background-repeat: repeat-x;
+    background-size: 100%;
+}
+
+#userSettingsTitle {
+    margin-bottom: 35px;
+}
+
+.formularContent {
+    padding: 20px 50px;
+}
+
+.content {
+    background-color: white;
+    margin-top: 13%;
+}
+

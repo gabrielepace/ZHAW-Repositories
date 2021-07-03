@@ -1,0 +1,19 @@
+<main>
+    <b-button id="create-modal-btn" v-b-modal.create-modal variant="outline-primary">Modul erfassen</b-button>
+    <CreateModal :module="{editItem}" :onClose="onClose"></CreateModal>
+
+    <div class="float-children" v-if="modulegroups.length > 0">
+        <Modulegroup :modulegroups="modulegroups"></Modulegroup>
+        <Semester v-for="(semester, i) in semesters.values()" :avg="semester.avg" :enrollments="semester.enrollments"
+                  :onEdit="onEdit" :ix="semester.semesterId" v-bind:key="i"></Semester>
+    </div>
+    <div class="no-modules" v-if="semesters.length === 0">
+        <b-alert show variant="light">
+            <h4 class="alert-heading">Keine Module vorhanden</h4>
+            <p>Willkommen zu EasyCTS!<br/>
+                EasyCTS ist ein Tool um dine Noten zu verwalten.<br/>
+                Bitte erfasse deine Module, indem du auf "Modul erfassen" klickst.
+            </p>
+        </b-alert>
+    </div>
+</main>

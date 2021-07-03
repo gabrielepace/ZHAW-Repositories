@@ -1,0 +1,141 @@
+<app>
+  <div class="container-fluid pt-5">
+    <loading if={ state.loading }></loading>
+    <div class="container">
+      <div class="row pt-5">
+        <!-- left collumn -->
+        <div class="col-12 col-md-12 col-xl-3">
+          <div class="row">
+            <projects-list projects={ state.projects } loading={ state.loading } activeProject={ state.activeProject } setActiveProject={ setActiveProject }></projects-list>
+            <create-project addProject={ addProject }></create-project>
+          </div>
+        </div>
+
+        <!-- main column -->
+        <div class="col-12 col-xl-9 mt-3 mt-xl-0">
+          <main>
+            <div class="card">
+              <div class="card-header">
+                Issues
+              </div>
+
+              <div if={ !state.activeProject } class="card-body text-muted">
+                Kein Projekt gewählt
+              </div>
+              <create-issue if={ state.activeProject } addIssue={ addIssue }></create-issue>
+              <issues-list if={ state.activeProject } issues={ state.activeProject ? state.activeProject.issues : [] } deleteIssue={ deleteIssue } toggleIssueDone={ toggleIssueDone }></issues-list>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    export default {
+      projectService: new ProjectService(),
+      issuesService: new IssuesService(),
+      onBeforeMount() {
+        this.state = {
+          projects: [],
+          activeProject: null,
+          loading: true,
+        };
+
+        this.projectService.loadProjects().then(() => {
+          this.update({
+            projects: this.projectService.projects,
+            loading: false,
+          });
+
+          route.router.push(window.location.href);
+        });
+      },
+      onMounted() {
+        route.initDomListeners();
+
+        const checkRoute = (path) => {
+          const matches = path.match(/\/projects\/([^\/$]+)/);
+
+          if (matches) {
+            this.setActiveProject(this.projectService.getProjectById(matches[1]));
+          }
+        };
+
+        route.router.on.value((path) => {
+          checkRoute(path);
+        });
+
+        checkRoute(window.location.pathname);
+      },
+      async addProject(title) {
+        this.update({
+          loading: true,
+        });
+
+        try {
+          await this.projectService.addProject(title);
+        } catch (error) {
+          return error.errors;
+        } finally {
+          this.updateProjects(true);
+        }
+      },
+      updateProjects(disableLoading) {
+        this.update({
+          projects: this.projectService.projects,
+          loading: disableLoading ? false : this.state.loading,
+        });
+      },
+      async addIssue(priority, title, dueDate, done) {
+        if (!this.state.activeProject) {
+          throw new Error('Kein aktives Projekt');
+        }
+
+        this.update({
+          loading: true,
+        });
+
+        try {
+          await this.state.activeProject.addIssue(priority, title, dueDate, done);
+        } catch (error) {
+          return error.errors;
+        } finally {
+          this.updateProjects(true);
+        }
+      },
+      deleteIssue(issueId) {
+        if (!this.state.activeProject) {
+          throw new Error('Kein aktives Projekt');
+        }
+
+        this.state.activeProject.deleteIssueById(issueId);
+        this.updateProjects();
+        this.issuesService.deleteIssue(this.state.activeProject.id, issueId);
+      },
+      toggleIssueDone(issue) {
+        issue.setDone(!issue.done);
+        this.updateProjects();
+        this.issuesService.saveIssue(this.state.activeProject.id, issue);
+      },
+      setActiveProject(project) {
+        if (project) {
+          this.update({
+            loading: true,
+          });
+
+          project.loadIssues().then(() => {
+            this.update({
+              activeProject: project,
+              loading: false,
+            });
+          });
+        } else {
+          this.update({
+            activeProject: project,
+          });
+        }
+      },
+    };
+  </script>
+</app>

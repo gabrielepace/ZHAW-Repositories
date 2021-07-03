@@ -1,0 +1,53 @@
+node_modules/
+package-lock.json
+
+db.sqlite3
+.vscode
+.idea
+
+env
+*.pyc
+pyvenv.cfg
+
+bin/
+debug.log
+include/
+lib/
+lib64/
+share/
+venv/
+
+#exclude versions created during testing
+media/versions/*
+
+#exclude log files
+app.log
+
+./idea
+# exclude vue build
+.frontend/dist/
+
+# macOS specific
+.DS_Store
+.nosync
+
+# vueJS specific
+/frontend/*.log
+frontend/dist/
+frontend/test/e2e/reports
+frontend/test/e2e/screenshots
+frontend/coverage
+
+frontend/Scripts/
+frontend/Lib/
+frontend/pyvenv.cfg
+
+# backend specific
+media/versions/*
+media/amplispec/*
+!media/versions/.gitkeep
+!media/amplispec/.gitkeep
+
+# nightwatch.js (Selenium) specific
+frontend/tests_output
+frontend/.nyc_output

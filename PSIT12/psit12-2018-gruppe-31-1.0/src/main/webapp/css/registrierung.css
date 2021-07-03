@@ -1,0 +1,135 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-repeat:no-repeat; 
+  background-position:center; 
+  background-size:100%;
+  opacity: 1;
+  background-image: url(img/hungryStudentBackground.jpg)
+}
+
+.content {
+  width: auto !important;
+}
+
+.panel h2{
+    color:#444444; 
+    font-size:18px; 
+    margin:0 0 8px 0;}
+
+.panel p {
+    color:#777777; 
+    font-size:14px; 
+    margin-bottom:30px; 
+    line-height:24px;
+}
+.register-form .form-control {
+  background: #f7f7f7 none repeat scroll 0 0;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+}
+/*-------------------------------register-main-div----------------------------*/
+.main-div  {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 2px;
+  margin: 5% auto; 
+}
+
+@media only screen and (min-width: 992px) {
+    .main-div {
+      min-width: 45%;
+      max-width: 50%; 
+      padding: 5% 4% 2% 4%;
+    }
+    body {
+        height: 700px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .main-div  {
+      width: 100%;
+      padding: 5%;
+      margin: 0;
+        }
+}
+/*----------------------------------login-main-div----------------------------*/
+.login-main-div  {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 2px;
+  margin: 5% auto; 
+}
+
+@media only screen and (min-width: 992px) {
+    .login-main-div {
+      max-width: 38%; 
+      padding: 5% 4% 2% 4%;
+    }
+    
+    body {
+        height: 700px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .login-main-div  {
+      width: 100%;
+      padding: 5%;
+      margin: 0;
+    }
+}
+
+.login-form .form-group {
+  margin-bottom:10px;
+}
+
+.login-form{ 
+  text-align:center;
+}
+
+.forgot a {
+  color: #777777;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.forgot p {
+  color: black;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.login-form  .btn.btn-primary {
+  background: #f0ad4e none repeat scroll 0 0;
+  border-color: #f0ad4e;
+  color: #ffffff;
+  font-size: 14px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+}
+.forgot {
+  margin: 10px auto 30px;
+}
+
+.login-form .btn.btn-primary.reset {
+  background: #ff9900 none repeat scroll 0 0;
+}
+
+.back { 
+  text-align: left; margin-top:10px;
+}
+
+.back a {
+  color: #444444; 
+  font-size: 13px;
+  text-decoration: none;
+}
+
+label {
+	display: inline !important;
+}

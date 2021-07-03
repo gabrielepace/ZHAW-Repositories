@@ -1,0 +1,48 @@
+Simple Parallel Port Emulation
+==============================
+
+M. Thaler, InIT/ZHAW, 2/2008
+
+
+1. What is it and what is it not?
+---------------------------------
+
+The goal of the kernel module "ParPortEmul" is to provide a virtual
+parallel port that can be accessed by a driver through the usual 
+inb_p(), inb(), outb_p() and outb() function at the base addresses
+0x3BC (lp0), 0x378 (lp1) and 0x278 (lp2). On the "other" side the 
+module provides access to hardware simulators through 3 device files
+with major nr. 126 and minor numbers 0, 1 and 2 where they can read 
+the data and control port (2 bytes) and write to the status port (1 byte).
+
+Of course, interrupts are not supported!
+
+  ------------        ---------------
+ |   your     |      | your parallel |        -------------  
+ | hardware   |  ->  |  port driver  |  <->  | ParPortEmul | <-> HW-Simulator
+ | simulator  |      |  + "io.h"     |        -------------
+  ------------        ---------------
+
+ \------------ your job -------------/   \------- what you get -------------/
+
+
+2. Usage
+--------
+
+If you want to use your own parallel port driver with the emulated
+parallel port, you only need to include the file "io.h" ...into
+your driver that's all, anything else remains completely the same 
+as with your driver for the real hardware.
+
+Be aware that:
+
+- you only can use inb() and outb()
+
+- you only can load your driver when the PartPortEmul
+  module is already loaded 
+
+- you need the File Module.symvers generated when compiling ParPortEmul
+  to compile your Parallel-Port Driver
+
+- and you have to remove your driver module before you
+  remove the PartPortEmul module

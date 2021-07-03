@@ -1,0 +1,12 @@
+---
+applications:
+- name: spring-testing-dev
+  memory: 1G
+  instances: 1
+  path: build/libs/spring-testing-1.0.jar
+  routes:
+  - route: spring-testing-dev-pacegab1.cclab.io
+  buildpacks:
+  - java_buildpack
+  env:
+    WEATHER_API_KEY: 35ec6f724498494e495c0df1509b7bdb

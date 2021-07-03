@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de-CH">
+  <head>
+    <meta charset="utf-8">
+    <title>Pendenzenliste</title>
+    <meta name="description" content="Pendenzenliste">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- AJAX jQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper-utils.min.js"
+            integrity="sha256-Im2+AKXyLBUePRXWElaAnuc37n6egsaypNiAZNMV1t8=" crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <script type="text/javascript" src="src/Task.js"></script>
+    <script type="text/javascript" src="src/TaskList.js"></script>
+    <!--<script type="text/javascript" src="src/Demo.js"></script>-->
+    <script type="text/javascript" src="src/Website.js"></script>
+    <!-- CSS Reference & Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon/todo.ico">
+  </head>
+  <body>
+    <header>
+      <h1 id="headerTitle">Pendenzenliste</h1>
+      <div id="headerSubtitle"><h6>WEB2 Projekt (FS2019)</h6></div>
+    </header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 task-row">
+          <div id="taskList"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="button-group">
+            <button id="createTask" type="button" class="btn btn-primary">Task erfassen</button>
+            <button id="newTodoList" type="button" class="btn btn-primary">Neue Taskliste</button>
+            <button id="saveTasks" type="button" class="btn btn-primary">Taskliste auf Server speichern</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div id="testPageLink"><a href="./jasmine/SpecRunner.html">Test durchführen</a></div>
+        </div>
+      </div>
+      <div id="notification" class="alert alert-success" role="alert">
+        <strong>Erfolg!</strong> Taskliste wurde gespeichert.
+      </div>
+    </div>
+    <footer id="container-footer" class="row">
+      <div class="col-12">
+        <p id="schoolClassNameTitle"><strong>Klasse:</strong> IT18a_ZH</p>
+        <p>&copy; Gabriel Wicki (wickigab) &amp; Gabriele Pace (pacegab1)</p>
+      </div>
+    </footer>
+  </body>
+</html>

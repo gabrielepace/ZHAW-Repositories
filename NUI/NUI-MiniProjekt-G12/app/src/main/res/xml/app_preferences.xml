@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/pref_category_title_about">
+
+        <Preference
+            android:title="Developed by"
+            android:icon="@drawable/ic_app_developed_by"
+            android:summary="NUI Group 12 (timofale, pacegab1, cerkesem)"/>
+
+        <Preference
+            android:title="ZHAW GitHub"
+            android:icon="@drawable/ic_location_searching"
+            android:summary="https://github.zhaw.ch/pacegab1/NUI-MiniProjekt-G12">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.zhaw.ch/pacegab1/NUI-MiniProjekt-G12"/>
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>

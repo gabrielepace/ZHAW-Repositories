@@ -1,0 +1,230 @@
+:source-highlighter: coderay
+:icons: font
+:icon-set: fa
+:sectnums:
+
+= Praktikum JDBC & File IO
+
+In diesem Praktikum werden sie mehrere Übungen ausführen um den grundlegenden Umgang mit JDBC und 
+File IO, sowie die Anwendung von Data Access Objects (DAO) zu üben.
+
+== Vorbereitung Praktikum JDBC & File Input/Output
+
+=== Einrichten der Datenbank
+Für dieses Praktikum benötigen sie Zugang zu einem Datenbankserver. Damit sie
+keinen lokalen Server einrichten müssen, können sie eine Datenbank auf dem
+DB-Laborserver Dublin einrichten. Die Anleitungen zum Einrichten der
+DB-Laborserver Umgebung finden sie hier im SoE-Intranet:
+https://intra.zhaw.ch/departemente/school-of-engineering/services/dienste-tools/soe-it-infrastruktur/db-laborserver/
+(Den Link finden sie auch auf der Hauptseite von Dublin https://dublin.zhaw.ch. 
+Dublin ist nur im ZHAW Netzwerk resp. via VPN erreichbar)
+
+**Aufgaben**
+[loweralpha]
+. Richten sie sich ihre PostgreSQL Datenbank ein +
+PostgreSQL deshalb, da es auf Dublin die einzige ist, die auch übers interne
+ZHAW Netzwerk (bzw. via VPN) direkt angesprochen werden kann, was wir später
+brauchen werden.
+Die Anleitung finden sie im Bereich "Einrichten und Zugriff auf PostgreSQL".
+  * Sie benötigen SSH Zugang zu Dublin
+  * Verwenden sie als DB-Passwort NICHT ihr ZHAW Passwort!
+
+.	Erstellen sie die Tabelle „picture“ in ihrer Datenbank +
+Das SQL-Script dazu finden im Ordner link:../handout/PictureDB/db/init-picture.sql[]
+sie können das SQL-Script von Kommandozeile auf Dublin mit
+`psql –f init-picture.sql` oder einem beliebigen Tool wie z.B. pgAdmin3 oder
+dem Webfrontend phpPgAdmin ausführen. Verifizieren sie, dass die Tabelle
+existiert und die Werte enthalten sind.
+
+=== Einrichten JDBC Umgebung
+Damit sie im Praktikum direkt loslegen können benötigen sie die JDBC-Treiber und
+müssen ihre Entwicklungsumgebung bzw. Projekt konfigurieren.
+
+**Aufgaben**
+[loweralpha]
+. Fügen sie den korrekten JDBC-Treiber zur Maven-Konfiguration `pom.xml` hinzu.
+Die Anleitung dazu finden sie unter
+https://mvnrepository.com/artifact/org.postgresql/postgresql
+Falls sie nicht Maven verwenden, müssen sie den passenden
+Treiber manuell von http://jdbc.postgresql.org/download.html
+herunterladen und in den Klassenpfad der IDE einbinden.
+[NOTE]
+Für Java 8/9 nehmen Sie die aktuelle JDBC 42.X Version oder neuer (für Java 6/7 die 
+jeweils dafüer gekennzeichnete Version). Diese sind rückwärtskompatibel mit der älteren 
+PostgreSQL-Version des Servers.
+
+. Testen sie die JDBC-Verbindung zur Datenbank +
+Führen sie die Klasse `TestJdbcConnection` aus und testen sie ob die Verbindung
+zum DB-Server klappt. +
+[NOTE]
+Die Verbindung zum DB-Laborserver Dublin ist nur innerhalb des ZHAW-Netzwerks
+bzw. via VPN-Verbindung möglich.
+
+
+== Picture Import
+
+In dieser Übung verwenden sie die grundlegenden JDBC Funktionen von
+Java um Daten von der Kommandozeile bzw. den Inhalt einer Datei in eine
+Datenbank zu importieren.
+
+Im Verzeichnis link:../handout/PictureDB/src[] finden sie das Programm
+`PictureImport.java`. In der Methode `main()` werden die folgenden drei
+Funktionen nacheinander aufgerufen:
+
+* `createPicture()`: Daten von Kommandozeile einlesen und Picture Objekt erzeugen
+*	`addPicture()`: Picture Objekt in Datenbank hinzufügen
+*	`getPicture()`: Picture Objekt aus Datenbank auslesen
+
+Die Methode `createPicture()`` ist schon fertig implementiert und ermöglicht die
+Daten eines Bildes, welche im Picture Objekt gespeichert werden auf der
+Kommandozeile einzugeben.
+
+[NOTE]
+Die Hilfsklasse `util/SimpleDataSource` wird verwendet, um bei Bedarf einfach 
+ein neues JDBC-Connection Objekt zu erstellen (`getConnection()`), ohne jedes 
+Mal URL, Username und Passwort mitgeben zu müssen.
+
+**Aufgaben:**
+[loweralpha]
+. Implementieren sie die Methoden `addPicture()` und `getPicture()`, welche die
+Daten in die von Ihnen vorbereitete Datenbank speichern bzw. auslesen.
+In `addPicture()` soll automatisch auch die id des Datensatzes ausgelesen und im
+Picture Objekt gespeichert werden. Verwenden sie dazu die im Unterricht gezeigte
+Technik mit `Statement.RETURN_GENERATED_KEYS` (Folie zur DAO insert-Methode).
+[TIP]
+Das `java.util.Date` Objekt müssen sie in ein `java.sql.Date` Objekt umwandeln
+(und umgekehrt beim Auslesen). Sie können dazu den Time-Wert (Sekunden seit
+1.1.1970) des java.util.Date-Objektes verwenden: +
+`java.sql.Date sqlDate = new java.sql.Date(myUtilDate.getTime())`;
+
+. Erweitern sie das Programm um die Methode `importFile(File file)`, welcher sie
+eine Datei mit Datensätzen übergeben, die in die Datenbank importiert werden
+sollen. Die Datei soll im Character-Separated-Value (CSV) Format vorhanden sein.
+Dabei ist jede Zeile ein Datensatz (in unserem Fall ein Picture) und die
+einzelnen Felder werden durch ein Trennzeichen/Delimiter (in unserem Fall ';')
+voneinander separiert. Als Beispiel können sie die mitgelieferte Datei
+link:../handout/PictureDB/db/data.csv[] verwenden. +
+*Vorgehen:* +
+Lesen sie die Datei zeilenweise ein, trennen sie die einzelnen Felder auf
+z.B. mit der Funktion `String.split()` und füllen sie die einzelnen Felder in
+ein Picture Objekt ab, das sie dann mit `addPicture()` speichern können.
+
+== Picture Data Access Objects
+
+Data Access Objects (DAOs) separieren die Geschäftslogik der Anwendung von der
+Datenhaltung (Persistenzschicht) und ermöglichen den Wechsel zwischen
+verschiedenen Speichertechnologien, ohne dass die Anwendungslogik angepasst
+werden muss.
+
+In dieser Übung werden sie DAO-Klassen für Picture erstellen und testen.
+Im Verzeichnis `picturedb/src/dao` finden sie die vorbereiteten Klassen:
+
+* `PictureDAO` ist das spezifische DAO Interface für das Picture Objekt. Dieses
+Interface wird von der Geschäftslogik ihrer Anwendung verwendet. Es definiert
+die grundlegenden DAO Methoden für schreibenden Zugriff (`insert`, `update`, 
+`delete`), wie auch die Basis-Finder-Methoden (`findById`, `findAll`), sowie 
+die  Finder-Methode, die nur für Picture relevant ist (`findByPosition`).
+* `PictureJdbcDAO` ist das Gerüst für die Implementierung für die Speicherung 
+der Daten in der Datenbank
+* `PictureFileDAO` ist das Gerüst für die Implementierung für die Speicherung 
+der Daten in Dateien (siehe Aufgabe 5).
+
+**Aufgaben:**
+[loweralpha]
+. Implementieren sie die Klasse `PictureJdbcDAO` +
+Beginnen sie mit den Methoden, die sie in Aufgabe 1 schon implementiert haben
+(`addPicture` → `insert`; `readPicture` → `findById`) und ergänzen sie auch die
+restlichen Funktionen (`update`, `delete`, `findAll`, ...)
+
+.	Erstellen sie ein Testprogramm, in welchem sie die DAO Methoden testen können.
+Zum Beispiel können sie mit dem Testprogramm aus Übung 2 starten und dieses so
+umbauen, dass es die ihr DAO-Objekt verwendet. Erweitern sie dieses, dass auch
+die anderen Funktionen getestet werden.
+
+== File Input / Output
+
+=== Verstehen von Zeichensätzen
+
+In der Vorlesung haben Sie gelernt, dass Java-Klassen für Unicode entworfen wurden.
+Nun ist Unicode aber nicht der einzige Zeichensatz und Java unterstütz durchaus 
+Alternativen. Welche Zeichensätze auf einem System konkret unterstützt werden 
+hängt von der Konfiguration des Betriebssystems und der JVM ab.
+
+**Aufgaben:**
+[loweralpha]
+. Schreiben Sie ein Programm (`UnderstandingCharSets`), welches alle unterstützten 
+Zeichensaetze auf der Konsole (System.out) ausgibt, zusammen mit dem Standardzeichensatz.
+https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
+
+. Erweitern Sie das Program so dass es im Standardzeichensatz einzele Zeichen 
+(also Zeichen für Zeichen) von der Konsole einliest und zudem im Zeichensatz 
+`US_ASCII` in eine Datei schreibt. +
+- Die Eingabe des Zeichens 'q' soll das Program ordentlich beenden.
+- Die Datei soll `CharSetEvaluation.txt` genannt werden und wird entweder erzeugt 
+  oder wenn Sie bereits existiert, einfach geöffnet und der Inhalt übeschrieben.
+- Lesen von der Konsole und Schreiben in die Datei soll leistungsoptimiert geschehen, 
+  also vom jeweiligen Input-/Output-Medium entkoppelt.
+- Testen Sie Ihr Program mit den folgenden Eingabereihenfolge und Zeichen: a b c d € f g q
+- Öffnen Sie die Textdatei nach Durchführung des Programs mit einem Texteditor 
+  und erklären Sie das Ergebnis.
+- Öffnen Sie die Datei anschliessend mit einem HEX-Editor und vergleichen Sie.
+
+=== Byte- vs. Zeichenorientierte Streams
+
+Im Unterricht haben Sie zwei Typen von IO-Streams kennen gelernt; 
+Byte- und Zeichenorientierte-Streams.
+In dieser Übung soll deren Verwendung geübt und analysiert werden was passiert, 
+wenn der falsche Typ verwendet wird. 
+
+**Aufgaben:**
+
+Schreiben Sie ein Program (`CopyFile`), welches Kopien von Dateien in einem Verzeichnis 
+erstellt.
+[loweralpha]
+. Verzeichnis-Struktur sicherstellen
+- Das Quell-Verzeichnis soll als Konsolenargument übergeben und auf Korrektheit 
+  überprüft werden. +
+-	Korrekt bedeutet, dass das Verzeichnis existiert und ausser zwei Dateien mit den Namen 
+  `rmz450.jpg` und `rmz450-spec.txt` nichts weiter enthält.
+
+. Dateien kopieren
+- Jede Datei soll zweimal kopiert werden, einmal zeichen- und einmal byte-orientiert. +
+- Dazu soll die jeweilige Datei geöffnet und Element für Element gelesen und ebenso 
+  wieder geschrieben werden.
+- Die Kopien sollen so benannt werden, dass aus dem Dateinamen hervorgeht, mit welcher 
+  Methode sie erstellt wurde.
+
+. Öffnen Sie die Kopien anschliessend mit einem entsprechenden Programm und erklären 
+  Sie die entsprechenden Effekte.
+
+. Öffnen Sie die Kopien anschliessend mit einem HEX-Editor und erklären Sie die Gründe 
+  für die Effekte.
+
+
+==` Picture File DAO (optional)
+
+In Aufgabe 3 haben sie die Klasse `PictureJdbcDAO` implementiert, um Picture
+Objekte in eine SQL-Datenbank zu speichern bzw. daraus einzulesen.
+Das Data Access Object Pattern ist jedoch technologieneutral und kann für diverse
+Datenquellen verwendet werden. In dieser Übung sollen die Picturedaten in
+einer lokalen Datei im Filesystem gespeichert werden.
+
+**Aufgaben:**
+[loweralpha]
+. Implementieren sie die Klasse `PictureFileDAO` +
+Als Dateiformat soll das in Übung 1 besprochene CSV-Format dienen. Dieses müssen
+sie evtl. um benötigte Felder (z.B. id) erweitern. Auch hier beginnen sie mit
+der bereits vorhandenen Logik aus Übung 1 (`importFile` → `findAll`) und
+implementieren als erstes die lesenden Funktionen (`count`, `findById` und
+`findByPosition`). Erweitern sie das Testprogram um diese Funktionen zu testen.
+
+. Implementieren sie die Methode `insert`; Anhängen eines Datensatzes am Ende
+der Datei. Die wichtigste Frage ist, wie erzeugen sie die id? Wie merken sie
+sich bzw. berechnen sie die nächste id? Eine Variante wäre, die erste Zeile der
+Datei für solche Metainformationen zu verwenden (eine Art Header). Andere Ideen?
+
+. Implementieren sie die restlichen Funktionen (`delete` und `update`) +
+Diese sind etwas aufwändiger, da Dateien sequentielle Medien sind und nicht
+einfach Zeichen mittendrin eingefügt bzw. gelöscht werden können.
+Wie kann man das lösen? Funktioniert ihre Variante auch mit sehr grossen Dateien
+(grösser als Hauptspeicher des Rechners)?

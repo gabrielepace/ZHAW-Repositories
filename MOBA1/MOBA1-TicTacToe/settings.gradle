@@ -1,0 +1,2 @@
+include ':tictactoe'
+rootProject.name = "Tictactoe"

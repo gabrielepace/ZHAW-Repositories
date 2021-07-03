@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>React Demo: Reusable Components</title>
+  <!-- Script tags including React -->
+  <script src="lib/react/react.js"></script>
+  <script src="lib/react/react-dom.js"></script>
+  <script src="lib/babel/babel.min.js"></script>
+  <script src="lib/cuid.js"></script>
+  <script src="lib/immutable.min.js"></script>
+</head>
+
+<body>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 600px;
+      height: 650px;
+    }
+
+    .box {
+      width: 80px;
+      height: 80px;
+      border: 1px solid black;
+      display: inline-block;
+      position: relative;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: 0px;
+      padding: 0px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  <div id="app"></div>
+  <script type="text/babel">
+
+
+    //import React from 'react';
+    //import { render } from 'react-dom';
+    let { render } = ReactDOM;
+    let { Component } = React;
+    let { fromJS } = Immutable;
+
+    var defaultgrid = [];
+    for (let i = 0; i < 6; i++) {
+      for (let j = 0; j < 7; j++) {
+        defaultgrid.push({
+          id: cuid(),
+          x: j,
+          y: 5 - i,
+          color: 'white',
+        })
+
+      }
+
+    }
+    // defaultgrid[40].color = "red";
+    // defaultgrid[39].color = "blue";
+    var red = false;
+
+
+    class MyFeature extends Component {
+
+      constructor() {
+        super();
+        this.state = {
+          data: fromJS({
+            articles: defaultgrid
+          }),
+        };
+        this.onClickAdd = this.onClickAdd.bind(this);
+      }
+
+      getColor(x, y) {
+        return this.data.get("articles").get(this.data.get('articles').findIndex(a => a.get('x') === x && a.get('y') === y)).get("color");
+      }
+
+      setColor(x, y, newcolor) {
+        this.data = this.data.update('articles', articles => articles.update(this.data.get('articles').findIndex(a => a.get('x') === x && a.get('y') === y), a => a.set('color', newcolor)));
+      }
+
+      onClickReset() {
+        console.log("reset");
+        this.data = this.data.set('articles', fromJS(defaultgrid));
+        red = false;
+      }
+
+      onClickAdd(x, y) {
+
+        var lowestY = -1;
+        for (let i = 5; i >= 0; i--) {
+          console.log(i + "    " + this.getColor(x, i));
+          if (this.getColor(x, i) !== "white") {
+            lowestY = i + 1;
+            break;
+          }
+          if (i === 0) {
+            lowestY = 0;
+            break;
+          }
+
+        }
+
+        if (lowestY == -1) return
+        if (this.getColor(x, lowestY) !== "white") return
+        this.setColor(x, lowestY, (red ? "red" : "blue"))
+        red = !red;
+      }
+
+
+
+      get data() {
+        return this.state.data;
+      }
+
+      set data(data) {
+        this.setState({ data });
+      }
+
+      render() {
+        const {
+          articles,
+        } = this.data.toJS();
+
+        return (
+          <section className="container">
+            <ArticleList
+              articles={articles}
+              onClickAdd={this.onClickAdd}
+            />
+            <button onClick={() => { this.onClickReset() }}>reset</button>
+          </section>
+        );
+      }
+    }
+
+
+    const ArticleList = ({
+      articles,
+      onClickAdd,
+    }) => (
+      <div>
+        {articles.map(i => (
+          <ArticleItem
+            key={i.id}
+            article={i}
+            onClickAdd={onClickAdd}
+          />
+        ))}
+      </div>
+    );
+
+    const ArticleItem = ({
+      article,
+      onClickAdd,
+    }) => (
+      <div className="box" onClick={() => { onClickAdd(article.x, article.y) }}>
+        <div className="circle" style={{ "backgroundColor": article.color }}>
+
+        </div>
+      </div>
+    );
+
+
+
+
+
+
+
+
+    render(
+      (<MyFeature />),
+      document.getElementById('app')
+    );
+
+  </script>
+</body>
+
+</html>

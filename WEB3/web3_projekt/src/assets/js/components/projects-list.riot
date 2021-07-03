@@ -1,0 +1,19 @@
+<projects-list class="col-12 col-md-6 col-xl-12">
+  <div class="card">
+    <div class="card-header">
+      Projekte
+    </div>
+    <div class="list-group list-group-flush">
+      <a each={ project in props.projects } class="list-group-item list-group-item-action { props.activeProject === project ? 'active' : '' }">
+        <span if={ props.activeProject === project }><i class="fas fa-arrow-right mr-2"></i></span>
+        { project.title }
+      </a>
+      <div if={ props.projects.length === 0 && !props.loading } class="list-group-item text-muted">
+        Keine Projekte verfügbar! Erfassen Sie ein neues Projekt.
+      </div>
+      <div if={ props.projects.length === 0 && props.loading } class="list-group-item text-muted">
+        Lädt...
+      </div>
+    </div>
+  </div>
+</projects-list>

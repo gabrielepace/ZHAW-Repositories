@@ -1,0 +1,19 @@
+/**
+ * @mainpage PROGC - Labs
+ *
+ * @section Purpose
+ *
+ * This is a PROGC lab <B>Pointer</B> source documentation.
+ *
+ * @section Assignment
+ *
+ * This lab is provided to use void pointers and non-void pointers.
+ * 
+ * Run the lab by:
+ *
+ * @code
+ * make clean; make; make doc; make test
+ * @endcode
+ *
+ * The executable program is located in the bin folder.
+ */

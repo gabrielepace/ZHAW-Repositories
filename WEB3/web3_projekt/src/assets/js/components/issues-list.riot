@@ -1,0 +1,65 @@
+<issues-list>
+  <ul class="list-group list-group-flush">
+    <li each={ issue in props.issues } class="list-group-item container { issue.done ? 'Task fertig' : '' }">
+      <div class="row">
+        <div class="col">
+          <form class="form-inline">
+            <label>
+              <input type="checkbox" class="mr-2" checked={ issue.done } onchange={ onToggleIssueDoneClick(issue) }>
+              { issue.title }
+              <span class="badge badge-{ getPriorityClass(issue) } ml-2">Priorität { issue.priority }</span>
+            </label>
+          </form>
+        </div>
+        <div class="col-12 col-md-3 text-right">
+          { issue.dueDate.toISOString().split('T')[0] }
+          <a href="#" class="text-dark" onclick={ onDeleteIssueClick(issue.id) }>
+            <i class="fas fa-trash-alt ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </li>
+    <li if={ props.issues.length === 0 } class="list-group-item text-muted">
+      Keine Issues in diesem Projekt
+    </li>
+  </ul>
+
+  <script>
+    export default {
+      getPriorityClass(issue) {
+        if (issue.priority === 'hoch') {
+          return 'danger';
+        } else if (issue.priority === 'mittel') {
+          return 'warning';
+        }
+
+        return 'info';
+      },
+      getPriorityId(issue) {
+        if (issue.priority === 'hoch') {
+          return 1;
+        } else if (issue.priority === 'mittel') {
+          return 2;
+        }
+
+        return 3;
+      },
+      onDeleteIssueClick(issueId) {
+        const { deleteIssue } = this.props;
+
+        return function(e) {
+          e.preventDefault();
+          deleteIssue(issueId);
+        };
+      },
+      onToggleIssueDoneClick(issue) {
+        const { toggleIssueDone } = this.props;
+
+        return function(e) {
+          e.preventDefault();
+          toggleIssueDone(issue);
+        };
+      },
+    };
+  </script>
+</issues-list>

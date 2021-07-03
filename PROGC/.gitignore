@@ -1,0 +1,17 @@
+# Log file
+*.log
+
+# eclipse files
+bin/**
+.classpath
+.settings/
+.loadpath
+
+# IntelliJ files
+.idea/
+*.iml
+/build/
+/bin/
+
+# VS Code file
+*.vscode

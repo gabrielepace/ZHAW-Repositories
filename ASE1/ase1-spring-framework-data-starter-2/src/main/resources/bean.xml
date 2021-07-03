@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="auction" class="ch.zhaw.ase1.domain.Auction">
+        <property name="auctionItem">
+            <bean class="ch.zhaw.ase1.domain.AuctionItem">
+                <property name="description" value="Test-Description" />
+                <property name="picture" value="Test-Picture" />
+                <property name="title" value="Test-Title" />
+            </bean>
+        </property>
+        <property name="category">
+            <bean class="ch.zhaw.ase1.domain.Category">
+                <property name="description" value="Test-Description" />
+                <property name="name" value="Test-Name" />
+            </bean>
+        </property>
+        <property name="bidArray">
+            <bean class="ch.zhaw.ase1.domain.Bid">
+                <property name="placedAtDateTime" value="01.05.2017 00:00:00" />
+                <property name="cancelExplanation" value="No Ex" />
+                <property name="amount" value="15" />
+            </bean>
+        </property>
+        <property name="endDateTime" value="01.01.2021" />
+        <property name="fixedPrice" value="100" />
+        <property name="minBidIncrement" value="2" />
+        <property name="startDateTime" value="01.01.2020 00:00:00" />
+        <property name="startingPrice" value="10" />
+        <property name="status" value="false" />
+    </bean>
+
+</beans>

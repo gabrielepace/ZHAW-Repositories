@@ -1,0 +1,12 @@
+.navbar-brand img {
+    height: 3em;
+}
+
+.user-img {
+    width: 40px;
+    opacity: 0.5;
+}
+
+.user-img:hover {
+    opacity: 0.75;
+}

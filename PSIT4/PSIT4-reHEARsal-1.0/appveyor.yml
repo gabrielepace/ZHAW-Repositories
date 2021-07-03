@@ -1,0 +1,27 @@
+# appveyor.yml
+---
+environment:
+  ffmpeg_download: https://ffmpeg.zeranoe.com/builds/
+  matrix:
+  - TOXENV: py36
+
+build_script:
+ - echo "build_script called"
+ 
+install:
+  - sudo apt install -y ffmpeg imagemagick curl software-properties-common
+  - curl -sL https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-GB | sudo bash -
+  - curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
+  - sudo apt install -y nodejs
+  - npm --prefix frontend install
+  - pip install --upgrade --user pip
+  - pip install --user -r requirements
+  - python manage.py makemigrations
+  - python manage.py migrate
+  - npm --prefix frontend run build --fix
+
+test_script:
+  - npm --version; node --version
+  - npm --prefix frontend run test:nightwatchjs
+  - coverage run --source='tracker/' manage.py test
+  - coverage report

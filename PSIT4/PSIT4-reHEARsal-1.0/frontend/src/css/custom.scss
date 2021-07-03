@@ -1,0 +1,21 @@
+$isabelline:        #f1f7ed;
+$gunmetal:          #243e36;
+$asparagus:         #7ca982;
+$pale-spring-bud:   #e0eec6;
+$brass:             #c2a83e;
+
+$theme-colors: (
+        "primary": $gunmetal,
+        "secondary": $pale-spring-bud,
+        "active": $asparagus,
+        "info": $asparagus
+);
+
+$list-group-active-bg: $asparagus;
+
+/* finally, import Bootstrap */
+@import "node_modules/bootstrap/scss/bootstrap";
+
+#view-container {
+  padding: 1.5em;
+}

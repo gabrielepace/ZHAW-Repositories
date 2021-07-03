@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/pending_todos"
+            android:icon="@drawable/ic_format_list_bulleted"
+            android:title="@string/nav_pending_todos_text" />
+        <item
+            android:id="@+id/completed_todos"
+            android:icon="@android:drawable/ic_menu_delete"
+            android:title="@string/nav_completed_todos_text" />
+        <item
+            android:id="@+id/tags"
+            android:icon="@drawable/ic_event_note"
+            android:title="@string/nav_tags_text" />
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/nav_settings_text" />
+    </group>
+
+</menu>

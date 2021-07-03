@@ -1,0 +1,23 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 33.91      0.21     0.21 16777217     0.00     0.00  mlDequeue
+ 12.92      0.29     0.08 16777217     0.00     0.00  mtDelThread
+ 12.92      0.37     0.08  8430552     0.00     0.00  mlSortIn
+ 11.30      0.44     0.07                             main
+  8.07      0.49     0.05  4194309     0.00     0.00  mlEnqueue
+  5.65      0.53     0.04  4236235     0.00     0.00  mlAddAfter
+  4.84      0.56     0.03 16861098     0.00     0.00  mtGetReadyTime
+  4.84      0.59     0.03 12624856     0.00     0.00  mtNewThread
+  2.42      0.60     0.02  8430549     0.00     0.00  compareReadyTimes
+  1.61      0.61     0.01                             mtSetReadyTime
+  0.81      0.62     0.01        1     5.01     5.01  shuffleIntArray
+  0.81      0.62     0.01                             mlReadFirst
+  0.00      0.62     0.00  4194312     0.00     0.00  mlAddBefore
+  0.00      0.62     0.00        8     0.00     0.00  mlGetNumNodes
+  0.00      0.62     0.00        4     0.00     0.00  beginTest
+  0.00      0.62     0.00        4     0.00     0.00  endTest
+  0.00      0.62     0.00        1     0.00     0.00  mlDelList
+  0.00      0.62     0.00        1     0.00     0.00  mlNewList

@@ -1,0 +1,7 @@
+#Sat Dec 12 11:23:15 CET 2020
+base.0=/home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=/home/gabrielepace/ZHAW/MOBA1/MOBA1LABS/Lab-5-Android-I-SimpleCalculator/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex

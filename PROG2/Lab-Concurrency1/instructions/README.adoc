@@ -1,0 +1,243 @@
+:source-highlighter: coderay
+:icons: font
+:icon-set: fa
+:sectnums:
+
+= Praktikum Concurrency 1
+
+== Printer-Threads: Verwendung von Java Threads
+
+Nachfolgend einige Basisübungen zum Starten und Stoppen von Threads in Java.
+
+[source, Java]
+----
+class PrinterThread extends Thread {
+    char ch;
+    int sleepTime;
+
+    public PrinterThread(String name, char c, int t) {
+        super(name);
+        ch = c; sleepTime = t;
+    }
+
+    public void run() {
+        System.out.println( getName() + " run laueft an");
+        for (int i = 1; i < 100; i++) {
+            System.out.print (ch);
+            try {
+                Thread.sleep(sleepTime);
+            } catch (InterruptedException e) { ; }
+        }
+        System.out.println( '\n' + getName() + " run  fertig");
+    }
+}
+
+public class Printer1 {
+    public static void main(String[] arg) {
+        PrinterThread a = new PrinterThread("PrinterA", '.', 0);
+        PrinterThread b = new PrinterThread("PrinterB", '*', 0);
+        a.start();
+        b.start();
+        b.run(); //Wie kann das abgefangen werden?
+    }
+}
+----
+
+[loweralpha]
+. Studieren Sie das Programm `Printer1.java`: Die Methode `Thread.run()` ist
+public und kann daher direkt aufgerufen werden. Erweitern Sie die Methode `run()`
+so, dass diese sofort terminiert, wenn sie direkt und nicht vom Thread
+aufgerufen wird. 
+[TIP]
+Was liefert die Methode `Thread.currentThread()` zurück?
+
+. Schreiben Sie das Programm so um, dass die run-Methode über das Interface
+`Runnable` implementiert wird.  +
+Führen Sie dazu eine Klasse `Printer` ein, die das Interface `Runnable`
+implementiert. +
+ Starten Sie zwei Threads, so dass die selbe Ausgabe entsteht wie bei (a). +
+ Verwenden Sie den untenstehenden Code für den Test ihrer Implementation:
+
+[source, Java]
+----
+public class Printer2 {
+    public static void main(String[] arg) {
+        Printer a = new Printer('.', 0);
+        Printer b = new Printer('*', 0);
+        Thread t1 = new Thread(a, "PrinterA");
+        Thread t2 = new Thread(b, "PrinterB");
+        t1.start();
+        t2.start();
+    }
+}
+----
+
+[loweralpha, start=3]
+. Wie kann man es erreichen, die Fairness zu erhöhen, d.h. dass der Wechsel
+zwischen den Threads häufiger erfolgt? Wirkt es sich aufs Resultat aus?
+. Wie muss man das Hauptprogramm anpassen, damit der Main-Thread immer
+als letztes endet?
+
+
+== Konto-Übertrag
+
+Nachfolgend eine einfache Klasse, um ein Konto zu verwalten, den Saldo abzufragen
+oder zu aktualisieren.
+
+[source, Java]
+----
+class Account {
+    private int id;
+    private int saldo = 0;
+
+    public Account(int id, int initialSaldo) {
+        this.id = id;         
+        this.saldo = initialSaldo;
+    }
+    public int getId() {
+        return id;
+    }
+    public int getSaldo () {
+        return saldo;
+    }
+    public void changeSaldo (int delta) {
+        this.saldo += delta;
+    }
+}
+----
+
+Ein Entwickler implementiert aufbauend auf der Klasse Account eine Operation für
+den Transfer eines Geldbetrages zwischen zwei Konti.
+Die Klasse `AccountTransferThread` implementiert dazu die Methode `accountTransfer`,
+welche in einer Schleife mehrfach aufgerufen wird, um viele kleine Transaktionen
+zu simulieren. Das Testprogramm `AccountTransferTest` (siehe abgegebenen Code)
+erzeugt schlussendlich mehrere Threads, die teilweise auf denselben Konto-Objekten
+operieren.
+
+[source, Java]
+----
+class AccountTransferThread extends Thread {
+    private Account fromAccount, toAccount;
+    private int amount;
+    public AccountTransferThread (Account fromAccount,
+                                  Account toAccount,
+                                  int amount) {
+        this.fromAccount = fromAccount;
+        this.toAccount = toAccount;
+        this.amount = amount;
+    }
+
+    public void accountTransfer() {
+        //do not overdraw account
+        if (fromAccount.getSaldo() > amount) {
+            fromAccount.changeSaldo(-betrag);
+            toAccount.changeSaldo(betrag);
+        }
+    }
+
+    public void run() {
+        for (int i=0; i<10000; i++) {
+            accountTransfer();
+        }
+    }
+}
+----
+
+[loweralpha]
+. Was stellen Sie fest, wenn Sie das Testprogramm laufen lassen? 
+Erklären Sie wie die Abweichungen zustande kommen.
+
+. Im Unterricht haben Sie gelernt, dass sie kritische Bereiche Ihres Codes durch
+Mutual-Exclusion geschützt werden sollen. Wie macht man das in Java?  +
+Versuchen Sie mit Hilfe von Mutual-Exclusion sicher zu stellen, dass keine
+Abweichungen entstehen.
+Reicht es, wenn Sie die kritischen Methoden in Account schützen?  +
+Untersuchen Sie mehrere Varianten von Locks (Lock auf Methode oder Block,
+Lock auf Instanz oder Klasse).  +
+Ihre Implementierung muss noch nebenläufige Transaktionen erlauben, d.h. wenn
+Sie zu stark synchronisieren, werden alle Transaktionen in Serie ausgeführt und
+Threads machen keinen Sinn mehr. +
+ Stellen Sie für sich folgende Fragen:
+* Welches ist das Monitor-Objekt?
+* Braucht es eventuell das Lock von mehr als einen Monitor während der Transaktion?
+
+. (optional) Wenn Sie es geschafft haben die Transaktion thread-safe zu
+implementieren, ersetzen Sie in `AccountTransferTest` die die folgende Zeile : +
+`AccountTransferThread t1 = new AccountTransferThread("Worker 1", account3, account1, 1); ` +
+durch +
+` AccountTransferThread t1 = new AccountTransferThread("Worker 1", account1, account3, 1);` +
+ und starten Sie das Programm noch einmal. Was stellen Sie fest?
+(evtl. müssen Sie es mehrfach versuchen, damit der Effekt auftritt). +
+Was könnte die Ursache sein und wie können Sie es beheben?
+
+== Traffic Light
+
+In dieser Aufgabe sollen Sie die Funktionsweise einer Ampel und deren Nutzung nachahmen.
+Benutzen Sie hierzu die Vorgabe `TrafficLightOperation.java`.
+
+[NOTE]
+Der Einfachheit halber sind alle Klassen in einer Datei zusammengefasst.
+Natürlich steht es ihnen frei, die Klassen auf mehrere Dateien aufzuteilen.
+
+[loweralpha]
+. Erweitern Sie zunächst eine Klasse `TrafficLight` mit drei Methoden:
+* Eine Methode zum Setzen der Ampel auf „rot“.
+* Eine Methode zum Setzen der Ampel auf „grün“.
+* Eine Methode mit dem Namen `passby()``. Diese Methode soll das Vorbeifahren
+eines Fahrzeugs an dieser Ampel nachbilden: Ist die Ampel rot, so wird der
+aufrufende Thread angehalten, und zwar so lange, bis die Ampel grün wird.
+Ist die Ampel dagegen grün, so kann der Thread sofort aus der Methode zurückkehren,
+ohne den Zustand der Ampel zu verändern. Verwenden Sie `wait`, `notify` und
+`notifyAll` nur an den unbedingt nötigen Stellen!
+
+[NOTE]
+Die Zwischenphase „gelb“ spielt keine Rolle – Sie können von diesem Zustand abstrahieren!
+
+[loweralpha, start=2]
+. Erweitern Sie nun die Klasse `Car` (abgeleitet von `Thread`). Im Konstruktor
+wird eine Referenz auf ein Feld von Ampeln übergeben. Diese Referenz wird in
+einem entsprechenden Attribut der Klasse `Car` gespeichert. In der run-Methode
+werden alle Ampeln dieses Feldes passiert, und zwar in einer Endlosschleife
+(d.h. nach dem Passieren der letzten Ampel des Feldes wird wieder die erste
+Ampel im Feld passiert).
+Natürlich darf das Auto erst dann eine Ampel passieren, wenn diese auf grün ist! +
+Für die Simulation der Zeitspanne fürs Passieren können Sie die folgende
+Anweisung verwenden: `sleep\((int)(Math.random() * 500));`
+
+Beantworten Sie entweder (c) oder (d) (nicht beide):
+
+[loweralpha, start=3]
+.	Falls Sie bei der Implementierung der Klasse TrafficLight die Methode
+`notifyAll` benutzt haben: Hätten Sie statt `notifyAll` auch die Methode `notify`
+verwenden können, oder haben Sie `notifyAll` unbedingt gebraucht?
+ Begründen Sie Ihre Antwort!
+
+. Falls Sie bei der Implementierung der Klasse Ampel die Methode `notify` benutzt
+haben: Begründen Sie, warum Sie `notifyAll` nicht unbedingt gebraucht haben!
+
+.	Testen Sie das Programm `TrafficLightOperation.java`. Die vorgegebene Klasse
+`TrafficLightOperation` implementiert eine primitive Simulation von Autos,
+welche die Ampeln passieren. Studieren Sie den Code dieser Klasse und überprüfen
+Sie, ob die erzeugte Ausgabe sinnvoll ist.
+
+
+== Thread Priority (optional)
+
+Diese Aufgabe vermittelt einen Einblick in das Prioritätensystem der Java Threads.
+Zur Aufgabe gehört die vorgegebene Klasse `PriorityTest.java`. Diese muss für Teile
+der Aufgabe modifiziert werden. Mit Hilfe der Klasse soll das Verhalten von Java
+Threads mit verschiedenen Prioritäten analysiert werden.
+[TIP]
+Es kann sein, dass verschiedene Betriebssysteme und Java-Versionen sich
+unterschiedlich verhalten http://www.javamex.com/tutorials/threads/priority.shtml
+
+Je nach Priorität im Bereich von `Thread.MIN_PRIORITY=1` über `Thread.NORM_PRIORITY=5`
+bis `Thread.MAX_PRIORITY=10`, sollte der Thread vom Scheduler bevorzugt behandelt
+werden, d.h. der Zähler `count` sollte häufiger inkrementiert werden.
+
+Folgende Fragen müssen abgeklärt und beantwortet werden:
+[loweralpha]
+. Wie verhält es sich, wenn alle Threads die gleiche Priorität haben?
+. Was stellen Sie fest, wenn die Threads unterschiedliche Priorität haben? +
+Erhöhen Sie auch die Anzahl Threads (z.B. 100), um eine Ressourcen-Knappheit
+zu provozieren.

@@ -1,0 +1,48 @@
+/* getters */
+export const LOADING = 'general/LOADING'
+export const SUCCESS = 'general/SUCCESS'
+export const CURRENT_SESSION = 'session/CURRENT_SESSION'
+export const CURRENT_SESSION_HASH = 'session/CURRENT_SESSION_HASH'
+export const CURRENT_SESSION_ID = 'session/CURRENT_SESSION_ID'
+export const TRACKS = 'track/TRACKS'
+export const TRACKS_SORTED = 'track/TRACKS_SORTED'
+export const TRACK_BY_ID = 'track/TRACK_BY_ID'
+export const CURRENT_TRACK = 'track/CURRENT_TRACK'
+export const CREATE_TRACK_CURRENT_STATE = 'track/CREATE_TRACK_CURRENT_STATE'
+export const CURRENT_VERSION = 'version/CURRENT_VERSION'
+export const VERSIONS_OF_CURRENT_TRACK_SORTED =
+  'track/VERSIONS_OF_CURRENT_TRACK_SORTED'
+
+/* mutations */
+export const MUTATE_LOADING = 'general/MUTATE_LOADING'
+export const MUTATE_SUCCESS = 'general/MUTATE_SUCCESS'
+export const MUTATE_CURRENT_SESSION = 'session/MUTATE_CURRENT_SESSION'
+export const MUTATE_TRACKS = 'track/MUTATE_TRACKS'
+export const MUTATE_CURRENT_TRACK = 'track/MUTATE_CURRENT_TRACK'
+export const MUTATE_CREATE_TRACK_CURRENT_STATE =
+  'track/MUTATE_CREATE_TRACK_CURRENT_STATE'
+export const MUTATE_ADD_TO_TRACKS = 'track/MUTATE_ADD_TO_TRACKS'
+export const MUTATE_CURRENT_VERSION = 'version/MUTATE_CURRENT_VERSION'
+export const MUTATE_PLAYING_VERSION = 'player/MUTATE_PLAYING_VERSION'
+export const MUTATE_ERROR = 'general/MUTATE_ERROR'
+export const MUTATE_NETWORK_ERROR = 'general/MUTATE_NETWORK_ERROR'
+export const MUTATE_EMPTY_INPUT = 'general/MUTATE_EMPTY_INPUT'
+
+/* actions */
+export const SET_DEFAULT_STATE = 'general/SET_DEFAULT_STATE'
+export const LOAD_TRACKS_ASYNC = 'track/LOAD_TRACKS_ASYNC'
+export const LOAD_SESSIONS_ASYNC = 'track/LOAD_SESSIONS_ASYNC'
+export const ADD_TRACK = 'track/ADD_TRACK'
+export const ADD_VERSION = 'track/ADD_VERSION'
+export const SET_CURRENT_TRACK = 'track/SET_CURRENT_TRACK'
+export const SET_CURRENT_TRACK_BY_ID = 'track/SET_CURRENT_TRACK_BY_ID'
+export const SET_CREATE_TRACK_CURRENT_STATE =
+  'track/SET_CREATE_TRACK_CURRENT_STATE'
+export const SET_CURRENT_VERSION = 'version/SET_CURRENT_VERSION'
+export const SET_PLAYING_VERSION = 'player/SET_PLAYING_VERSION'
+export const INIT_STORE = 'general/INIT_STORE'
+export const SET_CURRENT_SESSION = 'sessions/SET_CURRENT_SESSION'
+export const ADD_COMMENT = 'comment/ADD_COMMENT'
+export const FETCH_COMMENTS = 'comment/FETCH_COMMENTS'
+export const DELETE_TRACK = 'tracks/DELETE_TRACK'
+export const DELETE_TRACK_FROM_STORE = 'tracks/DELETE_TRACK_FROM_STORE'

@@ -1,0 +1,34 @@
+{
+  "name": "web3_projekt",
+  "version": "1.4.0",
+  "description": "ZHAW SoE Web Technologien 3 Projekt: Issue Tracker",
+  "scripts": {
+    "start": "node serve.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.zhaw.ch:pacegab1/web3_projekt.git"
+  },
+  "author": "Gabriel Wicki <wickigab@students.zhaw.ch>, Gabriele Pace <pacegab1@students.zhaw.ch>, Maximilian Bürgi <buergmax@students.zhaw.ch>",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "@chenfengyuan/datepicker": "^1.0.9",
+    "@riotjs/route": "^4.0.0",
+    "body-parser": "^1.9.2",
+    "bootstrap": "^4.3.1",
+    "express": "^4.17.1",
+    "i": "^0.3.6",
+    "jquery": "^3.4.1",
+    "jquery-ui-dist": "^1.12.1",
+    "mime-types": "^2.1.24",
+    "morgan": "^1.9.1",
+    "npm": "^6.13.0",
+    "popper.js": "^1.16.0",
+    "riot": "^4.6.6",
+    "uuid-tool": "^1.4.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.20",
+    "pg": "^7.14.0"
+  }
+}
