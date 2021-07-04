@@ -1,3 +1,3 @@
 # ZHAW-Repositories
-ZHAW School of Engineering - Repositories  
+ZHAW School of Engineering - My Repositories  
 IT18
